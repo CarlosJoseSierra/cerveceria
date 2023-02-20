@@ -151,10 +151,10 @@ export const getHistReparados = async (req, res) => {
       }
   };
 
-  export const getHistorialTotalEquipoReparado = async (req, res) => {
+  export const getTotalEquiposMapa = async (req, res) => {
     try {
       const pool = await getConnection();
-      const result = await pool.request().query(querys.getDataReparadosTotal);//DataTotalRep
+      const result = await pool.request().query(querys.getDataEquiposMapa);//DataTotalRep
       res.json(result.recordset);
     } catch (error) {
       res.status(500);
@@ -162,10 +162,10 @@ export const getHistReparados = async (req, res) => {
     }
   };
 
-  export const getHistorialTotalEquipoDisponible = async (req, res) => {
+  export const getTopFiveVendedores = async (req, res) => {
     try {
       const pool = await getConnection();
-      const result = await pool.request().query(querys.getDataDisponiblesTotal);//DataTotalDisp
+      const result = await pool.request().query(querys.getDataTopFiveVendedores);//DataTotalDisp
       res.json(result.recordset);
     } catch (error) {
       res.status(500);

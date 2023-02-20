@@ -7,8 +7,8 @@ import {
   getHistorialEquipoEntregado,
   getHistorialEquipoReparado,
   getHistorialEquipoDisponible,
-  getHistorialTotalEquipoReparado,
-  getHistorialTotalEquipoDisponible,
+  getTotalEquiposMapa,
+  getTopFiveVendedores,
   getHistorialTotalEquipoEntregado,
   getTotalItemsServ,
   getHistTotalEntregado,
@@ -29,8 +29,8 @@ router.get("/historial5/:id/:id2", getHistorialEquipoReparado);
 router.get("/historial6/:id/:id2", getHistorialEquipoDisponible);
 
 //totales de la grafica del area delDashboard
-router.get("/historialx", getHistorialTotalEquipoReparado);
-router.get("/historialy", getHistorialTotalEquipoDisponible);
+router.get("/historialx", getTotalEquiposMapa);
+router.get("/historialy", getTopFiveVendedores);
 router.get("/historialz", getHistorialTotalEquipoEntregado);
 //La parte de abajo del dashboard
 router.get("/historial4z", getHistTotalEntregado);
