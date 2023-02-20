@@ -17,8 +17,8 @@ router.get("/historial5/:id/:id2", _historial.getHistorialEquipoReparado);
 router.get("/historial6/:id/:id2", _historial.getHistorialEquipoDisponible);
 
 //totales de la grafica del area delDashboard
-router.get("/historialx", _historial.getHistorialTotalEquipoReparado);
-router.get("/historialy", _historial.getHistorialTotalEquipoDisponible);
+router.get("/historialx", _historial.getTotalEquiposMapa);
+router.get("/historialy", _historial.getTopFiveVendedores);
 router.get("/historialz", _historial.getHistorialTotalEquipoEntregado);
 //La parte de abajo del dashboard
 router.get("/historial4z", _historial.getHistTotalEntregado);
