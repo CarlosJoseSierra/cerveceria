@@ -26,7 +26,7 @@ var dbSettings = {
   password: "Solomon2011",
   server: "181.198.20.179",
   //server: "DESKTOP-DQQ2201",
-  database: "PRODUCCION",
+  database: "DB_PRODUCCION",
   options: {
     encrypt: false,
     // for azure
