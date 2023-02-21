@@ -1,27 +1,28 @@
-@api = http://localhost:3000/api/activos1
-@api3 = http://localhost:3000/api/activos
-@api2 = http://localhost:3000/api/modelosz
-
-@api4 = http://localhost:3000/api/activos/x
-
-@api5 = http://localhost:3000/api/activosI
+@api = http://localhost:3000/api/activos
 
 
 
-{{api4}}/1/18
 
 ###
-PUT {{api3}}/3220
+POST {{api}}/new
 Content-Type: application/json
 
 {   
-    "EQC_serie":"55555",
-    "EQC_placa":"55555",
-    "EQC_EQUIP_id":2,
-    "EQC_CLI_id":2,
-    "EQC_USU_ing":17,
-    "EQC_codTag":"S1001",
-    "EQC_LOGO_id":2
+    "EQC_serie":"5555",
+    "EQC_placa":"2222",
+    "EQC_EQUIP_id":5,
+    "EQC_MAP_ciudad":"Quito",
+    "EQC_MAP_provincia":"Pichincha",
+    "EQC_MAP_address":"xxxxxxxxxxxxxxxxxxxxxxxxx",
+    "EQC_USU_ing":1,
+    "EQC_codTag":"S2",
+    "EQC_LOGO_id":5,
+    "EQC_nombreCliente":"cjsa",
+    "EQC_identificacionCliente":"0919",
+    "EQC_direccionCliente":"tulip",
+    "EQC_NegocioCliente":"tienda NN",
+    "EQC_telefonoCliente":"0967bb",
+    "EQC_cambio":0
 }
 
 ###
@@ -50,8 +51,6 @@ PUT  {{api}}/772
 ### delete product 
 DELETE {{api}}/772
 
-### get count
-{{api3}}/count
 
 ### update
 PUT {{api}}/767
@@ -63,5 +62,4 @@ Content-Type: application/json
     "quantity": "20"
 }
 
-### get idCliente
-{{api4}}/4
+

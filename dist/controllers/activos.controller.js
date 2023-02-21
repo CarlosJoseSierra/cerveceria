@@ -45,12 +45,12 @@ var getActivos = /*#__PURE__*/function () {
 exports.getActivos = getActivos;
 var createNewActivo = /*#__PURE__*/function () {
   var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(req, res) {
-    var _req$body, EQC_serie, EQC_placa, EQC_EQUIP_id, EQC_MAP_ciudad, EQC_MAP_provincia, EQC_MAP_address, EQC_USU_ing, EQC_codTag, EQC_LOGO_id, EQC_nombreCliente, EQC_identificacionCliente, EQC_direccionCliente, EQC_NegocioCliente, EQC_telefonoCliente, pool, result;
+    var _req$body, EQC_serie, EQC_placa, EQC_EQUIP_id, EQC_MAP_ciudad, EQC_MAP_provincia, EQC_MAP_address, EQC_USU_ing, EQC_codTag, EQC_LOGO_id, EQC_nombreCliente, EQC_identificacionCliente, EQC_direccionCliente, EQC_NegocioCliente, EQC_telefonoCliente, EQC_cambio, pool, result;
     return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          _req$body = req.body, EQC_serie = _req$body.EQC_serie, EQC_placa = _req$body.EQC_placa, EQC_EQUIP_id = _req$body.EQC_EQUIP_id, EQC_MAP_ciudad = _req$body.EQC_MAP_ciudad, EQC_MAP_provincia = _req$body.EQC_MAP_provincia, EQC_MAP_address = _req$body.EQC_MAP_address, EQC_USU_ing = _req$body.EQC_USU_ing, EQC_codTag = _req$body.EQC_codTag, EQC_LOGO_id = _req$body.EQC_LOGO_id, EQC_nombreCliente = _req$body.EQC_nombreCliente, EQC_identificacionCliente = _req$body.EQC_identificacionCliente, EQC_direccionCliente = _req$body.EQC_direccionCliente, EQC_NegocioCliente = _req$body.EQC_NegocioCliente, EQC_telefonoCliente = _req$body.EQC_telefonoCliente; // validating
-          if (!(EQC_serie == null || EQC_placa == null || EQC_EQUIP_id == null || EQC_CLI_id == null || EQC_USU_ing == null || EQC_codTag == null || EQC_LOGO_id == null)) {
+          _req$body = req.body, EQC_serie = _req$body.EQC_serie, EQC_placa = _req$body.EQC_placa, EQC_EQUIP_id = _req$body.EQC_EQUIP_id, EQC_MAP_ciudad = _req$body.EQC_MAP_ciudad, EQC_MAP_provincia = _req$body.EQC_MAP_provincia, EQC_MAP_address = _req$body.EQC_MAP_address, EQC_USU_ing = _req$body.EQC_USU_ing, EQC_codTag = _req$body.EQC_codTag, EQC_LOGO_id = _req$body.EQC_LOGO_id, EQC_nombreCliente = _req$body.EQC_nombreCliente, EQC_identificacionCliente = _req$body.EQC_identificacionCliente, EQC_direccionCliente = _req$body.EQC_direccionCliente, EQC_NegocioCliente = _req$body.EQC_NegocioCliente, EQC_telefonoCliente = _req$body.EQC_telefonoCliente, EQC_cambio = _req$body.EQC_cambio; // validating
+          if (!(EQC_serie == null || EQC_placa == null || EQC_EQUIP_id == null || EQC_USU_ing == null || EQC_codTag == null || EQC_LOGO_id == null)) {
             _context2.next = 3;
             break;
           }
@@ -64,7 +64,7 @@ var createNewActivo = /*#__PURE__*/function () {
         case 6:
           pool = _context2.sent;
           _context2.next = 9;
-          return pool.request().input("EQC_serie", _database.sql.VarChar, EQC_serie).input("EQC_placa", _database.sql.VarChar, EQC_placa).input("EQC_EQUIP_id", _database.sql.Decimal, EQC_EQUIP_id).input("EQC_MAP_ciudad", _database.sql.VarChar, EQC_MAP_ciudad).input("EQC_MAP_provincia", _database.sql.VarChar, EQC_MAP_provincia).input("EQC_MAP_address", _database.sql.VarChar, EQC_MAP_address).input("EQC_USU_ing", _database.sql.Decimal, EQC_USU_ing).input("EQC_codTag", _database.sql.VarChar, EQC_codTag).input("EQC_LOGO_id", _database.sql.Decimal, EQC_LOGO_id).input("EQC_nombreCliente", _database.sql.VarChar, EQC_nombreCliente).input("EQC_identificacionCliente", _database.sql.VarChar, EQC_identificacionCliente).input("EQC_direccionCliente", _database.sql.VarChar, EQC_direccionCliente).input("EQC_NegocioCliente", _database.sql.VarChar, EQC_NegocioCliente).input("EQC_telefonoCliente", _database.sql.Varchar, EQC_telefonoCliente).input("EQC_cambio", _database.sql.Boolean, EQC_cambio).query(_database.querys.addNewActivo);
+          return pool.request().input("EQC_serie", _database.sql.VarChar, EQC_serie).input("EQC_placa", _database.sql.VarChar, EQC_placa).input("EQC_EQUIP_id", _database.sql.Decimal, EQC_EQUIP_id).input("EQC_MAP_ciudad", _database.sql.VarChar, EQC_MAP_ciudad).input("EQC_MAP_provincia", _database.sql.VarChar, EQC_MAP_provincia).input("EQC_MAP_address", _database.sql.VarChar, EQC_MAP_address).input("EQC_USU_ing", _database.sql.Decimal, EQC_USU_ing).input("EQC_codTag", _database.sql.VarChar, EQC_codTag).input("EQC_LOGO_id", _database.sql.Decimal, EQC_LOGO_id).input("EQC_nombreCliente", _database.sql.VarChar, EQC_nombreCliente).input("EQC_identificacionCliente", _database.sql.VarChar, EQC_identificacionCliente).input("EQC_direccionCliente", _database.sql.VarChar, EQC_direccionCliente).input("EQC_NegocioCliente", _database.sql.VarChar, EQC_NegocioCliente).input("EQC_telefonoCliente", _database.sql.VarChar, EQC_telefonoCliente).input("EQC_cambio", _database.sql.Decimal, EQC_cambio).query(_database.querys.addNewActivo);
         case 9:
           result = _context2.sent;
           if (!(result.rowsAffected == 1)) {
@@ -83,14 +83,15 @@ var createNewActivo = /*#__PURE__*/function () {
             token: 0
           }));
         case 15:
-          _context2.next = 21;
+          _context2.next = 22;
           break;
         case 17:
           _context2.prev = 17;
           _context2.t0 = _context2["catch"](3);
           res.status(500);
+          console.log(_context2.t0.message);
           res.send(_context2.t0.message);
-        case 21:
+        case 22:
         case "end":
           return _context2.stop();
       }
@@ -108,7 +109,7 @@ var updateActivoById = /*#__PURE__*/function () {
       while (1) switch (_context3.prev = _context3.next) {
         case 0:
           _req$body2 = req.body, EQC_serie = _req$body2.EQC_serie, EQC_placa = _req$body2.EQC_placa, EQC_EQUIP_id = _req$body2.EQC_EQUIP_id, EQC_MAP_ciudad = _req$body2.EQC_MAP_ciudad, EQC_MAP_provincia = _req$body2.EQC_MAP_provincia, EQC_MAP_address = _req$body2.EQC_MAP_address, EQC_USU_ing = _req$body2.EQC_USU_ing, EQC_codTag = _req$body2.EQC_codTag, EQC_LOGO_id = _req$body2.EQC_LOGO_id, EQC_nombreCliente = _req$body2.EQC_nombreCliente, EQC_identificacionCliente = _req$body2.EQC_identificacionCliente, EQC_direccionCliente = _req$body2.EQC_direccionCliente, EQC_NegocioCliente = _req$body2.EQC_NegocioCliente, EQC_telefonoCliente = _req$body2.EQC_telefonoCliente; // validating
-          if (!(EQC_serie == null || EQC_placa == null || EQC_EQUIP_id == null || EQC_CLI_id == null || EQC_USU_ing == null || EQC_codTag == null || EQC_LOGO_id == null)) {
+          if (!(EQC_serie == null || EQC_placa == null || EQC_EQUIP_id == null || EQC_USU_ing == null || EQC_codTag == null || EQC_LOGO_id == null)) {
             _context3.next = 3;
             break;
           }

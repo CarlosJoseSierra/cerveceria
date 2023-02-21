@@ -13,7 +13,7 @@ router.get("/activos", getActivos);
 
 router.get("/activos/x/:idUsuario", getActivosXUsuario);
 
-router.post("/activosI", createNewActivo);
+router.post("/activos/new", createNewActivo);
 
 //router.get("/activos/count", getTotalActivos);
 

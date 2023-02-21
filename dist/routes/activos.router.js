@@ -9,7 +9,7 @@ var _activos = require("../controllers/activos.controller");
 var router = (0, _express.Router)();
 router.get("/activos", _activos.getActivos);
 router.get("/activos/x/:idUsuario", _activos.getActivosXUsuario);
-router.post("/activosI", _activos.createNewActivo);
+router.post("/activos/new", _activos.createNewActivo);
 
 //router.get("/activos/count", getTotalActivos);
 
