@@ -73,14 +73,13 @@ export const getHistReparados = async (req, res) => {
     }
   };
 
-  export const getHistorialEquipoEntregado = async (req, res) => {
+  export const getHistorialEquipo = async (req, res) => {
     try {
         const pool = await getConnection();
         const result = await pool
         .request()
         .input("id", req.params.id)
-        .input("id2", req.params.id2)
-        .query(querys.getHistorialEntregados);//gistorialentregados
+        .query(querys.getHistorialEquipos);//gistorialentregados
         res.json(result.recordset);
       } catch (error) {
         res.status(500);

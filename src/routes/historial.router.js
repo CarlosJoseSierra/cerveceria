@@ -4,7 +4,7 @@ import {
   getHistDisponibles,
   getHistEntregados,
   getTopFiveItems,
-  getHistorialEquipoEntregado,
+  getHistorialEquipo,
   getHistorialEquipoReparado,
   getHistorialEquipoDisponible,
   getTotalEquiposMapa,
@@ -24,7 +24,7 @@ router.get("/historial2/:id/:id2", getHistDisponibles);
 router.get("/historial3/:id/:id2", getHistEntregados);
 router.get("/historial/:id/:id2", getTopFiveItems);
 router.get("/historials", getTotalItemsServ);
-router.get("/historial4/:id/:id2", getHistorialEquipoEntregado);
+router.get("/historial4/:id", getHistorialEquipo);
 router.get("/historial5/:id/:id2", getHistorialEquipoReparado);
 router.get("/historial6/:id/:id2", getHistorialEquipoDisponible);
 
