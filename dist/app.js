@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _express = _interopRequireDefault(require("express"));
+var _cors = _interopRequireDefault(require("cors"));
 var _activosRouter = _interopRequireDefault(require("./routes/activos.router.js"));
 var _clientesRouter = _interopRequireDefault(require("./routes/clientes.router.js"));
 var _equiposRouter = _interopRequireDefault(require("./routes/equipos.router.js"));
@@ -15,15 +16,13 @@ var _modelosRouter = _interopRequireDefault(require("./routes/modelos.router.js"
 var _logosRouter = _interopRequireDefault(require("./routes/logos.router.js"));
 var _solicitudExternaRouter = _interopRequireDefault(require("./routes/solicitudExterna.router.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-//import cors from "cors";
-
 //import morgan from "morgan";
 //import config from "./config.js";
 
 var app = (0, _express["default"])();
 
 // Middlewares
-//app.use(cors());
+app.use((0, _cors["default"])());
 //app.use(morgan("dev"));
 //app.use(express.urlencoded({ extended: false }));
 app.use(_express["default"].json());

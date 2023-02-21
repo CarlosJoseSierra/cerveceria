@@ -62,10 +62,10 @@ export const getHistReparados = async (req, res) => {
       }
   };
 
-  export const getTotalItemsServ = async (req, res) => {
+  export const getDataTopFiveVendedores = async (req, res) => {
     try {
       const pool = await getConnection();
-      const result = await pool.request().query(querys.geoTotalItemsServicios);
+      const result = await pool.request().query(querys.getDataTopFiveVendedores);
       res.json(result.recordset);
     } catch (error) {
       res.status(500);

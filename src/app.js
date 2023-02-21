@@ -1,5 +1,5 @@
 import express from "express";
-//import cors from "cors";
+import cors from "cors";
 import activoRoutes from "./routes/activos.router.js";
 import clienteRoutes from "./routes/clientes.router.js";
 import equipoRoutes from "./routes/equipos.router.js";
@@ -16,7 +16,7 @@ import solicitudRoutes from "./routes/solicitudExterna.router.js";
 const app = express();
 
 // Middlewares
-//app.use(cors());
+app.use(cors());
 //app.use(morgan("dev"));
 //app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
