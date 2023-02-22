@@ -66,7 +66,7 @@ export const updateActivoById = async (req, res) => {
   try {
     //console.log('no se conecto');
     const pool = await getConnection();
-    console.log('se conecto');
+    
     const result = await pool
       .request()
       .input("id", req.params.id)
@@ -93,9 +93,8 @@ export const updateActivoById = async (req, res) => {
     return res.status(400).json({ status: "400", msg: "No se pudo actualizar, consulte al administrador" ,token:0});
   }
   } catch (error) {
-    res.status(500);
-    res.send(error.message);
-    console.log(error.message);
+      res.status(500);
+      res.send(error.message);
   }
 };
 

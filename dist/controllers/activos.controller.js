@@ -122,13 +122,12 @@ var updateActivoById = /*#__PURE__*/function () {
           return (0, _database.getConnection)();
         case 6:
           pool = _context3.sent;
-          console.log('se conecto');
-          _context3.next = 10;
+          _context3.next = 9;
           return pool.request().input("id", req.params.id).input("EQC_serie", _database.sql.VarChar, EQC_serie).input("EQC_placa", _database.sql.VarChar, EQC_placa).input("EQC_EQUIP_id", _database.sql.Decimal, EQC_EQUIP_id).input("EQC_MAP_ciudad", _database.sql.VarChar, EQC_MAP_ciudad).input("EQC_MAP_provincia", _database.sql.VarChar, EQC_MAP_provincia).input("EQC_MAP_address", _database.sql.VarChar, EQC_MAP_address).input("EQC_USU_ing", _database.sql.Decimal, EQC_USU_ing).input("EQC_codTag", _database.sql.VarChar, EQC_codTag).input("EQC_LOGO_id", _database.sql.Decimal, EQC_LOGO_id).input("EQC_nombreCliente", _database.sql.VarChar, EQC_nombreCliente).input("EQC_identificacionCliente", _database.sql.VarChar, EQC_identificacionCliente).input("EQC_direccionCliente", _database.sql.VarChar, EQC_direccionCliente).input("EQC_NegocioCliente", _database.sql.VarChar, EQC_NegocioCliente).input("EQC_telefonoCliente", _database.sql.VarChar, EQC_telefonoCliente).input("EQC_cambio", _database.sql.Decimal, EQC_cambio).query(_database.querys.updateActivoById);
-        case 10:
+        case 9:
           result = _context3.sent;
           if (!(result.rowsAffected == 1)) {
-            _context3.next = 15;
+            _context3.next = 14;
             break;
           }
           return _context3.abrupt("return", res.status(200).json({
@@ -136,26 +135,25 @@ var updateActivoById = /*#__PURE__*/function () {
             msg: "Actualizacion exitosa",
             token: 0
           }));
-        case 15:
+        case 14:
           return _context3.abrupt("return", res.status(400).json({
             status: "400",
             msg: "No se pudo actualizar, consulte al administrador",
             token: 0
           }));
-        case 16:
-          _context3.next = 23;
+        case 15:
+          _context3.next = 21;
           break;
-        case 18:
-          _context3.prev = 18;
+        case 17:
+          _context3.prev = 17;
           _context3.t0 = _context3["catch"](3);
           res.status(500);
           res.send(_context3.t0.message);
-          console.log(_context3.t0.message);
-        case 23:
+        case 21:
         case "end":
           return _context3.stop();
       }
-    }, _callee3, null, [[3, 18]]);
+    }, _callee3, null, [[3, 17]]);
   }));
   return function updateActivoById(_x5, _x6) {
     return _ref3.apply(this, arguments);
