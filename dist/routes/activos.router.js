@@ -19,6 +19,6 @@ router.get("/activos1/:EQC_codTag", _activos.getActivoByCodTag);
 
 //router.delete("/activos/:id", deleteActivoById);
 
-router.put("/activos/:id", _activos.updateActivoById);
+router.put("/activos/x/:id", _activos.updateActivoById);
 var _default = router;
 exports["default"] = _default;

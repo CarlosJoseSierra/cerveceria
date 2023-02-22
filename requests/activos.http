@@ -1,6 +1,6 @@
 @api = http://localhost:3000/api/activos
 
-
+@api2 = http://localhost:3000/api/activos/x
 
 
 ###
@@ -22,6 +22,28 @@ Content-Type: application/json
     "EQC_direccionCliente":"tulip",
     "EQC_NegocioCliente":"tienda NN",
     "EQC_telefonoCliente":"0967bb",
+    "EQC_cambio":0
+}
+
+###
+PUT {{api2}}/2
+Content-Type: application/json
+
+{   
+    "EQC_serie":"5555",
+    "EQC_placa":"2222",
+    "EQC_EQUIP_id":5,
+    "EQC_MAP_ciudad":"Quito",
+    "EQC_MAP_provincia":"Pichincha",
+    "EQC_MAP_address":"xxxxxxxxxxxxxxxxxxxxxxxxx",
+    "EQC_USU_ing":1,
+    "EQC_codTag":"S2",
+    "EQC_LOGO_id":5,
+    "EQC_nombreCliente":"Carlos Sierra  Alvarado",
+    "EQC_identificacionCliente":"0919354340001",
+    "EQC_direccionCliente":"tulipanes mz 1140 villa 1",
+    "EQC_NegocioCliente":"tienda Nene",
+    "EQC_telefonoCliente":"0967399223",
     "EQC_cambio":0
 }
 

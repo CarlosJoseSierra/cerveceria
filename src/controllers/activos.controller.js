@@ -56,17 +56,17 @@ export const createNewActivo = async (req, res) => {
 
 export const updateActivoById = async (req, res) => {
   const { EQC_serie, EQC_placa, EQC_EQUIP_id,EQC_MAP_ciudad,EQC_MAP_provincia,EQC_MAP_address,EQC_USU_ing,
-    EQC_codTag,EQC_LOGO_id,EQC_nombreCliente,EQC_identificacionCliente,EQC_direccionCliente,EQC_NegocioCliente,EQC_telefonoCliente} = req.body;
+    EQC_codTag,EQC_LOGO_id,EQC_nombreCliente,EQC_identificacionCliente,EQC_direccionCliente,EQC_NegocioCliente,EQC_telefonoCliente,EQC_cambio} = req.body;
 
   // validating
   if (EQC_serie == null || EQC_placa == null ||  EQC_EQUIP_id==null  || EQC_USU_ing == null || EQC_codTag == null || EQC_LOGO_id == null) {
     return res.status(400).json({ msg: "Favor ingresar Datos Requeridos" });
   }
 
-
   try {
+    //console.log('no se conecto');
     const pool = await getConnection();
-
+    console.log('se conecto');
     const result = await pool
       .request()
       .input("id", req.params.id)
@@ -83,19 +83,19 @@ export const updateActivoById = async (req, res) => {
       .input("EQC_identificacionCliente", sql.VarChar, EQC_identificacionCliente)
       .input("EQC_direccionCliente", sql.VarChar, EQC_direccionCliente)
       .input("EQC_NegocioCliente", sql.VarChar, EQC_NegocioCliente)
-      .input("EQC_telefonoCliente",sql.Varchar,EQC_telefonoCliente)
-      .input("EQC_cambio",sql.Boolean,EQC_cambio)
+      .input("EQC_telefonoCliente",sql.VarChar,EQC_telefonoCliente)
+      .input("EQC_cambio",sql.Decimal,EQC_cambio)
       .query(querys.updateActivoById);
 
-   // res.json({ EQC_serie, EQC_placa, EQC_EQUIP_id,EQC_CLI_id, EQC_USU_ing,EQC_codTag,EQC_LOGO_id});
    if(result.rowsAffected==1){
-    return res.status(200).json({ status: "ok", msg: "Registro exitoso" ,token:0});
+    return res.status(200).json({ status: "ok", msg: "Actualizacion exitosa" ,token:0});
   }else{
-    return res.status(400).json({ status: "400", msg: "No se pudo registrar, consulte al administrador" ,token:0});
+    return res.status(400).json({ status: "400", msg: "No se pudo actualizar, consulte al administrador" ,token:0});
   }
   } catch (error) {
     res.status(500);
     res.send(error.message);
+    console.log(error.message);
   }
 };
 
