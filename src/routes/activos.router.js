@@ -15,10 +15,6 @@ router.get("/activos/x/:idUsuario", getActivosXUsuario);
 
 router.post("/activos/new", createNewActivo);
 
-//router.get("/activos/count", getTotalActivos);
-
-//router.get("/activos/:id", getActivoById);
-
 router.get("/activos1/:EQC_codTag", getActivoByCodTag);
 
 //router.delete("/activos/:id", deleteActivoById);

@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import activoRoutes from "./routes/activos.router.js";
-import clienteRoutes from "./routes/clientes.router.js";
+import cargoRoutes from "./routes/cargos.router";
 import equipoRoutes from "./routes/equipos.router.js";
-import productRoutes from "./routes/products.routes.js";
+import rolRoutes from "./routes/roles.routes";
 import usuarioRoutes from "./routes/usuarios.router.js";
 import historialRoutes from "./routes/historial.router.js";
 import modeloRoutes from "./routes/modelos.router.js";
@@ -23,9 +23,9 @@ app.use(express.json());
 
 // Routes
 
-app.use("/api", productRoutes);
+app.use("/api", rolRoutes);
 app.use("/api", activoRoutes);
-app.use("/api", clienteRoutes);
+app.use("/api", cargoRoutes);
 app.use("/api", equipoRoutes);
 app.use("/api", usuarioRoutes);
 app.use("/api", historialRoutes);

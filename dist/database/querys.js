@@ -4,7 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.querys = void 0;
-var querys = {
+var _querys;
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
+function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
+var querys = (_querys = {
   getAllProducts: "SELECT TOP(500) * FROM PRODUCTO",
   getProductById: "SELECT * FROM PRODUCTO Where PROD_id = @Id",
   addNewProduct: "INSERT INTO PRODUCTO (PROD_codigo, PROD_nombre, PROD_medida) VALUES (@name,@description,@quantity);",
@@ -52,6 +57,9 @@ var querys = {
   getTotalModelos: "SELECT TOP 5 T.EQUIP_modelo,COUNT(DISTINCT(T.EQC_id))AS CONTEO FROM(SELECT EQC_EQUIP_id,EQC_id,EQUIP_modelo FROM EQUIPO_COMPLETO INNER JOIN EQUIPO ON EQC_EQUIP_id = EQUIP_id WHERE EQC_estadoEquipo = 1)  T GROUP BY T.EQUIP_modelo ORDER BY CONTEO DESC",
   //Querys Tabla Logos
   getAllLogos: "SELECT LOGO_id,LOGO_nombre FROM LOGO",
-  getLogoById: "SELECT LOGO_id,LOGO_nombre FROM LOGO Where LOGO_id = @Id"
-};
+  getLogoById: "SELECT LOGO_id,LOGO_nombre FROM LOGO Where LOGO_id = @Id",
+  //Nuevos
+  getAllRoles: "SELECT * FROM ROL",
+  getAllCargos: "SELECT * FROM CARGO"
+}, _defineProperty(_querys, "addNewActivo", "INSERT INTO USUARIOS(USU_nombre,USU_usuario,USU_clave,USU_cargo,USU_rol,USU_estado,USU_conectado) VALUES(@USU_nombre,@USU_usuario,@USU_clave,@USU_cargo,@USU_rol,1,0)"), _defineProperty(_querys, "updateActivoById", "UPDATE USUARIOS SET USU_nombre = @USU_nombre,USU_usuario = @USU_usuario,USU_clave = @USU_clave,USU_cargo = @USU_cargo,USU_rol = @USU_rol WHERE USU_id = @Id"), _querys);
 exports.querys = querys;

@@ -7,9 +7,9 @@ exports["default"] = void 0;
 var _express = _interopRequireDefault(require("express"));
 var _cors = _interopRequireDefault(require("cors"));
 var _activosRouter = _interopRequireDefault(require("./routes/activos.router.js"));
-var _clientesRouter = _interopRequireDefault(require("./routes/clientes.router.js"));
+var _cargos = _interopRequireDefault(require("./routes/cargos.router"));
 var _equiposRouter = _interopRequireDefault(require("./routes/equipos.router.js"));
-var _productsRoutes = _interopRequireDefault(require("./routes/products.routes.js"));
+var _roles = _interopRequireDefault(require("./routes/roles.routes"));
 var _usuariosRouter = _interopRequireDefault(require("./routes/usuarios.router.js"));
 var _historialRouter = _interopRequireDefault(require("./routes/historial.router.js"));
 var _modelosRouter = _interopRequireDefault(require("./routes/modelos.router.js"));
@@ -31,9 +31,9 @@ app.use(_express["default"].json());
 
 // Routes
 
-app.use("/api", _productsRoutes["default"]);
+app.use("/api", _roles["default"]);
 app.use("/api", _activosRouter["default"]);
-app.use("/api", _clientesRouter["default"]);
+app.use("/api", _cargos["default"]);
 app.use("/api", _equiposRouter["default"]);
 app.use("/api", _usuariosRouter["default"]);
 app.use("/api", _historialRouter["default"]);

@@ -55,4 +55,14 @@ export const querys = {
   //Querys Tabla Logos
   getAllLogos: "SELECT LOGO_id,LOGO_nombre FROM LOGO", 
   getLogoById: "SELECT LOGO_id,LOGO_nombre FROM LOGO Where LOGO_id = @Id",
+
+  //Nuevos
+  getAllRoles: "SELECT * FROM ROL",
+  getAllCargos: "SELECT * FROM CARGO",
+
+  addNewActivo:
+    "INSERT INTO USUARIOS(USU_nombre,USU_usuario,USU_clave,USU_cargo,USU_rol,USU_estado,USU_conectado) VALUES(@USU_nombre,@USU_usuario,@USU_clave,@USU_cargo,@USU_rol,1,0)",
+  
+    updateActivoById:
+    "UPDATE USUARIOS SET USU_nombre = @USU_nombre,USU_usuario = @USU_usuario,USU_clave = @USU_clave,USU_cargo = @USU_cargo,USU_rol = @USU_rol WHERE USU_id = @Id",
 };
