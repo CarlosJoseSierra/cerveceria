@@ -60,9 +60,9 @@ export const querys = {
   getAllRoles: "SELECT * FROM ROL",
   getAllCargos: "SELECT * FROM CARGO",
 
-  addNewActivo:
+  addNewUser:
     "INSERT INTO USUARIOS(USU_nombre,USU_usuario,USU_clave,USU_cargo,USU_rol,USU_estado,USU_conectado) VALUES(@USU_nombre,@USU_usuario,@USU_clave,@USU_cargo,@USU_rol,1,0)",
   
-    updateActivoById:
+    updateUserById:
     "UPDATE USUARIOS SET USU_nombre = @USU_nombre,USU_usuario = @USU_usuario,USU_clave = @USU_clave,USU_cargo = @USU_cargo,USU_rol = @USU_rol WHERE USU_id = @Id",
 };

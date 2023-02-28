@@ -203,7 +203,7 @@ var createNewUser = /*#__PURE__*/function () {
         case 4:
           pool = _context5.sent;
           _context5.next = 7;
-          return pool.request().input("USU_nombre", _database.sql.VarChar, USU_nombre).input("USU_usuario", _database.sql.VarChar, USU_usuario).input("USU_clave", _database.sql.Decimal, USU_clave).input("USU_cargo", _database.sql.VarChar, USU_cargo).input("USU_rol", _database.sql.VarChar, USU_rol).query(_database.querys.addNewUser);
+          return pool.request().input("USU_nombre", _database.sql.VarChar, USU_nombre).input("USU_usuario", _database.sql.VarChar, USU_usuario).input("USU_clave", _database.sql.VarChar, USU_clave).input("USU_cargo", _database.sql.VarChar, USU_cargo).input("USU_rol", _database.sql.VarChar, USU_rol).query(_database.querys.addNewUser);
         case 7:
           result = _context5.sent;
           if (!(result.rowsAffected == 1)) {
@@ -254,7 +254,7 @@ var updateUserById = /*#__PURE__*/function () {
         case 4:
           pool = _context6.sent;
           _context6.next = 7;
-          return pool.request().input("id", req.params.id).input("USU_nombre", _database.sql.VarChar, USU_nombre).input("USU_usuario", _database.sql.VarChar, USU_usuario).input("USU_clave", _database.sql.Decimal, USU_clave).input("USU_cargo", _database.sql.VarChar, USU_cargo).input("USU_rol", _database.sql.VarChar, USU_rol).query(_database.querys.updateActivoById);
+          return pool.request().input("id", req.params.id).input("USU_nombre", _database.sql.VarChar, USU_nombre).input("USU_usuario", _database.sql.VarChar, USU_usuario).input("USU_clave", _database.sql.VarChar, USU_clave).input("USU_cargo", _database.sql.VarChar, USU_cargo).input("USU_rol", _database.sql.VarChar, USU_rol).query(_database.querys.updateUserById);
         case 7:
           result = _context6.sent;
           if (!(result.rowsAffected == 1)) {

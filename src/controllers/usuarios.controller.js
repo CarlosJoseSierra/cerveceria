@@ -91,7 +91,7 @@ export const getUsuarioById = async (req, res) => {
         .request()
         .input("USU_nombre", sql.VarChar, USU_nombre)
         .input("USU_usuario", sql.VarChar, USU_usuario)
-        .input("USU_clave", sql.Decimal, USU_clave)
+        .input("USU_clave", sql.VarChar, USU_clave)
         .input("USU_cargo", sql.VarChar, USU_cargo)
         .input("USU_rol", sql.VarChar, USU_rol)
         .query(querys.addNewUser);
@@ -119,10 +119,10 @@ export const getUsuarioById = async (req, res) => {
         .input("id", req.params.id)
         .input("USU_nombre", sql.VarChar, USU_nombre)
         .input("USU_usuario", sql.VarChar, USU_usuario)
-        .input("USU_clave", sql.Decimal, USU_clave)
+        .input("USU_clave", sql.VarChar, USU_clave)
         .input("USU_cargo", sql.VarChar, USU_cargo)
         .input("USU_rol", sql.VarChar, USU_rol)
-        .query(querys.updateActivoById);
+        .query(querys.updateUserById);
   
      if(result.rowsAffected==1){
       return res.status(200).json({ status: "ok", msg: "Actualizacion exitosa" ,token:0});
