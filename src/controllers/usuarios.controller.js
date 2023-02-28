@@ -66,7 +66,7 @@ export const getByUserPass = async (req, res) => {
     }
 };
 
-export const getUsuarioById = async (req, res) => {
+export const getUserById = async (req, res) => {
     try {
         const pool = await getConnection();
     
