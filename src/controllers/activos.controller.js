@@ -14,7 +14,7 @@ export const getActivos = async (req, res) => {
 export const createNewActivo = async (req, res) => {
   const { EQC_serie, EQC_placa, EQC_EQUIP_id,EQC_MAP_ciudad,EQC_MAP_provincia,EQC_MAP_address,EQC_USU_ing,
     EQC_codTag,EQC_LOGO_id,EQC_nombreCliente,EQC_identificacionCliente,EQC_direccionCliente,EQC_NegocioCliente,
-    EQC_telefonoCliente,EQC_cambio} = req.body;
+    EQC_telefonoCliente,EQC_cambio,EQC_estadoEquipo,EQC_observacion} = req.body;
   
   // validating
   if (EQC_serie == null || EQC_placa == null ||  EQC_EQUIP_id==null || EQC_USU_ing == null || EQC_codTag == null || EQC_LOGO_id == null) {
@@ -40,6 +40,9 @@ export const createNewActivo = async (req, res) => {
       .input("EQC_NegocioCliente", sql.VarChar, EQC_NegocioCliente)
       .input("EQC_telefonoCliente", sql.VarChar, EQC_telefonoCliente)
       .input("EQC_cambio",sql.Decimal,EQC_cambio)
+      .input("EQC_estadoEquipo",sql.Decimal,EQC_estadoEquipo)
+      .input("EQC_observacion",sql.VarChar,EQC_observacion)
+      
       .query(querys.addNewActivo);
       if(result.rowsAffected==1){
         return res.status(200).json({ status: "ok", msg: "Registro exitoso" ,token:0});
@@ -56,7 +59,8 @@ export const createNewActivo = async (req, res) => {
 
 export const updateActivoById = async (req, res) => {
   const { EQC_serie, EQC_placa, EQC_EQUIP_id,EQC_MAP_ciudad,EQC_MAP_provincia,EQC_MAP_address,EQC_USU_ing,
-    EQC_codTag,EQC_LOGO_id,EQC_nombreCliente,EQC_identificacionCliente,EQC_direccionCliente,EQC_NegocioCliente,EQC_telefonoCliente,EQC_cambio} = req.body;
+    EQC_codTag,EQC_LOGO_id,EQC_nombreCliente,EQC_identificacionCliente,EQC_direccionCliente,EQC_NegocioCliente,EQC_telefonoCliente,
+    EQC_cambio,EQC_estadoEquipo,EQC_observacion} = req.body;
 
   // validating
   if (EQC_serie == null || EQC_placa == null ||  EQC_EQUIP_id==null  || EQC_USU_ing == null || EQC_codTag == null || EQC_LOGO_id == null) {
@@ -85,6 +89,8 @@ export const updateActivoById = async (req, res) => {
       .input("EQC_NegocioCliente", sql.VarChar, EQC_NegocioCliente)
       .input("EQC_telefonoCliente",sql.VarChar,EQC_telefonoCliente)
       .input("EQC_cambio",sql.Decimal,EQC_cambio)
+      .input("EQC_estadoEquipo",sql.Decimal,EQC_estadoEquipo)
+      .input("EQC_observacion",sql.VarChar,EQC_observacion)
       .query(querys.updateActivoById);
 
    if(result.rowsAffected==1){
