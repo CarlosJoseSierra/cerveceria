@@ -11,7 +11,7 @@ const router = Router();
 
 router.get("/activos", getActivos);
 
-router.get("/activos/x/:idUsuario", getActivosXUsuario);
+router.get("/activos/y/:idUsuario", getActivosXUsuario);
 
 router.post("/activos/new", createNewActivo);
 
