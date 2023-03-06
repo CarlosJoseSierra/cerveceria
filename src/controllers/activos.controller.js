@@ -12,7 +12,7 @@ export const getActivos = async (req, res) => {
 };
 
 export const createNewActivo = async (req, res) => {
-  const { EQC_serie, EQC_placa, EQC_EQUIP_id,EQC_MAP_ciudad,EQC_MAP_provincia,EQC_MAP_address,EQC_USU_ing,
+  const { EQC_serie, EQC_placa, EQC_EQUIP_id,EQC_MARCA_id,EQC_MAP_ciudad,EQC_MAP_provincia,EQC_MAP_address,EQC_USU_ing,
     EQC_codTag,EQC_LOGO_id,EQC_nombreCliente,EQC_identificacionCliente,EQC_direccionCliente,EQC_NegocioCliente,
     EQC_telefonoCliente,EQC_cambio,EQC_estadoEquipo,EQC_observacion} = req.body;
   
@@ -28,6 +28,7 @@ export const createNewActivo = async (req, res) => {
       .input("EQC_serie", sql.VarChar, EQC_serie)
       .input("EQC_placa", sql.VarChar, EQC_placa)
       .input("EQC_EQUIP_id", sql.Decimal, EQC_EQUIP_id)
+      .input("EQC_MARCA_id", sql.Decimal, EQC_MARCA_id)
       .input("EQC_MAP_ciudad", sql.VarChar, EQC_MAP_ciudad)
       .input("EQC_MAP_provincia", sql.VarChar, EQC_MAP_provincia)
       .input("EQC_MAP_address", sql.VarChar, EQC_MAP_address)
@@ -58,7 +59,7 @@ export const createNewActivo = async (req, res) => {
 };
 
 export const updateActivoById = async (req, res) => {
-  const { EQC_serie, EQC_placa, EQC_EQUIP_id,EQC_MAP_ciudad,EQC_MAP_provincia,EQC_MAP_address,EQC_USU_ing,
+  const { EQC_serie, EQC_placa, EQC_EQUIP_id,EQC_MARCA_id,EQC_MAP_ciudad,EQC_MAP_provincia,EQC_MAP_address,EQC_USU_ing,
     EQC_codTag,EQC_LOGO_id,EQC_nombreCliente,EQC_identificacionCliente,EQC_direccionCliente,EQC_NegocioCliente,EQC_telefonoCliente,
     EQC_cambio,EQC_estadoEquipo,EQC_observacion} = req.body;
 
@@ -77,6 +78,7 @@ export const updateActivoById = async (req, res) => {
       .input("EQC_serie", sql.VarChar, EQC_serie)
       .input("EQC_placa", sql.VarChar, EQC_placa)
       .input("EQC_EQUIP_id", sql.Decimal, EQC_EQUIP_id)
+      .input("EQC_MARCA_id", sql.Decimal, EQC_MARCA_id)
       .input("EQC_MAP_ciudad", sql.VarChar, EQC_MAP_ciudad)
       .input("EQC_MAP_provincia", sql.VarChar, EQC_MAP_provincia)
       .input("EQC_MAP_address", sql.VarChar, EQC_MAP_address)
