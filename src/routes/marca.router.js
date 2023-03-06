@@ -8,6 +8,6 @@ const router = Router();
 
 router.get("/marcas", getMarcas);
 
-router.post("/activos/new", createNewMarca);
+router.post("/marcas/new", createNewMarca);
 
 export default router;

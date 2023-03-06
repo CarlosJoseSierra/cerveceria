@@ -47,7 +47,7 @@ var querys = {
   addNewUser: "INSERT INTO USUARIOS(USU_nombre,USU_usuario,USU_clave,USU_cargo,USU_rol,USU_estado,USU_conectado) VALUES(@USU_nombre,@USU_usuario,@USU_clave,@USU_cargo,@USU_rol,1,0)",
   updateUserById: "UPDATE USUARIOS SET USU_nombre = @USU_nombre,USU_usuario = @USU_usuario,USU_clave = @USU_clave,USU_cargo = @USU_cargo,USU_rol = @USU_rol WHERE USU_id = @Id",
   //Marcas
-  getAllMarcas: "SELECT * FROM MARCA",
+  getAllMarcas: "SELECT MARCA_id,MARCA_descripcion FROM MARCA",
   addNewMarca: "INSERT INTO MARCA(MARCA_id,MARCA_descripcion) VALUES(@MARCA_id,@MARCA_descripcion)"
 };
 exports.querys = querys;
