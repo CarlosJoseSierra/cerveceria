@@ -12,6 +12,19 @@ export const getUsuarios = async (req, res) => {
   }
 };
 
+export const getVendedores = async (req, res) => {
+  try {
+    const pool = await getConnection();
+    const result = await pool.request().query(querys.getVendedores);
+    res.json(result.recordset);
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
+};
+
+
+
 export const getUser = async(req, res) =>{
   const { USU_usuario, USU_clave } = req.body;
   

@@ -158,7 +158,7 @@ export const getTotalActivos = async (req, res) => {
   const pool = await getConnection();
 
   const result = await pool.request().query(querys.getTotalActivos);
-  console.log(result);
+  //console.log(result);
   res.json(result.recordset[0][""]);
 };
 

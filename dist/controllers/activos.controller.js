@@ -276,9 +276,9 @@ var getTotalActivos = /*#__PURE__*/function () {
           return pool.request().query(_database.querys.getTotalActivos);
         case 5:
           result = _context7.sent;
-          console.log(result);
+          //console.log(result);
           res.json(result.recordset[0][""]);
-        case 8:
+        case 7:
         case "end":
           return _context7.stop();
       }
