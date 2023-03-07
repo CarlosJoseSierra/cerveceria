@@ -48,6 +48,8 @@ var querys = {
   updateUserById: "UPDATE USUARIOS SET USU_nombre = @USU_nombre,USU_usuario = @USU_usuario,USU_clave = @USU_clave,USU_cargo = @USU_cargo,USU_rol = @USU_rol WHERE USU_id = @Id",
   //Marcas
   getAllMarcas: "SELECT MARCA_id,MARCA_descripcion FROM MARCA",
-  addNewMarca: "INSERT INTO MARCA(MARCA_id,MARCA_descripcion) VALUES(@MARCA_id,@MARCA_descripcion)"
+  addNewMarca: "INSERT INTO MARCA(MARCA_id,MARCA_descripcion) VALUES(@MARCA_id,@MARCA_descripcion)",
+  getAllCiudad: "SELECT DISTINCT(EQC_MAP_ciudad) FROM EQUIPO_COMPLETO ORDER BY EQC_MAP_ciudad",
+  getAllProvincia: "SELECT DISTINCT(EQC_MAP_provincia) FROM EQUIPO_COMPLETO ORDER BY EQC_MAP_provincia"
 };
 exports.querys = querys;

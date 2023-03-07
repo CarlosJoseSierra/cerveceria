@@ -57,4 +57,7 @@ export const querys = {
     getAllMarcas:"SELECT MARCA_id,MARCA_descripcion FROM MARCA",
     addNewMarca:
     "INSERT INTO MARCA(MARCA_id,MARCA_descripcion) VALUES(@MARCA_id,@MARCA_descripcion)",
+
+    getAllCiudad:"SELECT DISTINCT(EQC_MAP_ciudad) FROM EQUIPO_COMPLETO ORDER BY EQC_MAP_ciudad",
+    getAllProvincia:"SELECT DISTINCT(EQC_MAP_provincia) FROM EQUIPO_COMPLETO ORDER BY EQC_MAP_provincia",
 };

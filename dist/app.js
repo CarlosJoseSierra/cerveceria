@@ -16,6 +16,7 @@ var _modelosRouter = _interopRequireDefault(require("./routes/modelos.router.js"
 var _logosRouter = _interopRequireDefault(require("./routes/logos.router.js"));
 var _solicitudExternaRouter = _interopRequireDefault(require("./routes/solicitudExterna.router.js"));
 var _marcaRouter = _interopRequireDefault(require("./routes/marca.router.js"));
+var _localizacionRouter = _interopRequireDefault(require("./routes/localizacion.router.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 //import morgan from "morgan";
 //import config from "./config.js";
@@ -42,6 +43,7 @@ app.use("/api", _modelosRouter["default"]);
 app.use("/api", _logosRouter["default"]);
 app.use("/api", _solicitudExternaRouter["default"]);
 app.use("/api", _marcaRouter["default"]);
+app.use("/api", _localizacionRouter["default"]);
 app.use(function (req, res, next) {
   res.status(404).json({
     message: 'endpoint not found'
