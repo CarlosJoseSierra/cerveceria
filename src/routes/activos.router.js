@@ -5,6 +5,7 @@ import {
   updateActivoById,
   getActivoByCodTag,
   getActivosXUsuario,
+  getcountActivo,
 } from "../controllers/activos.controller";
 
 const router = Router();
@@ -14,6 +15,8 @@ router.get("/activos", getActivos);
 router.get("/activos/y/:idUsuario", getActivosXUsuario);
 
 router.post("/activos/new", createNewActivo);
+
+router.post("/activos/count", getcountActivo);
 
 router.get("/activos1/:EQC_codTag", getActivoByCodTag);
 
