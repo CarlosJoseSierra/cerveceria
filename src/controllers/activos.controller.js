@@ -25,7 +25,7 @@ export const getcountActivo = async (req, res) => {
 export const createNewActivo = async (req, res) => {
   const { EQC_serie, EQC_placa, EQC_EQUIP_id,EQC_MARCA_id,EQC_MAP_ciudad,EQC_MAP_provincia,EQC_MAP_address,EQC_USU_ing,
     EQC_codTag,EQC_LOGO_id,EQC_nombreCliente,EQC_identificacionCliente,EQC_direccionCliente,EQC_NegocioCliente,
-    EQC_telefonoCliente,EQC_cambio,EQC_estadoEquipo,EQC_observacion} = req.body;
+    EQC_telefonoCliente,EQC_cambio,EQC_estadoEquipo,EQC_observacion, EQC_TI_id} = req.body;
   
   // validating
   if (EQC_serie == null || EQC_placa == null ||  EQC_EQUIP_id==null || EQC_USU_ing == null || EQC_codTag == null || EQC_LOGO_id == null) {
@@ -54,6 +54,7 @@ export const createNewActivo = async (req, res) => {
       .input("EQC_cambio",sql.Decimal,EQC_cambio)
       .input("EQC_estadoEquipo",sql.Decimal,EQC_estadoEquipo)
       .input("EQC_observacion",sql.VarChar,EQC_observacion)
+      .input("EQC_TI_id", sql.Decimal, EQC_TI_id)
       
       .query(querys.addNewActivo);
       if(result.rowsAffected==1){
@@ -72,7 +73,7 @@ export const createNewActivo = async (req, res) => {
 export const updateActivoById = async (req, res) => {
   const { EQC_serie, EQC_placa, EQC_EQUIP_id,EQC_MARCA_id,EQC_MAP_ciudad,EQC_MAP_provincia,EQC_MAP_address,EQC_USU_ing,
     EQC_codTag,EQC_LOGO_id,EQC_nombreCliente,EQC_identificacionCliente,EQC_direccionCliente,EQC_NegocioCliente,EQC_telefonoCliente,
-    EQC_cambio,EQC_estadoEquipo,EQC_observacion} = req.body;
+    EQC_cambio,EQC_estadoEquipo,EQC_observacion,EQC_TI_id} = req.body;
 
   // validating
   if (EQC_serie == null || EQC_placa == null ||  EQC_EQUIP_id==null  || EQC_USU_ing == null || EQC_codTag == null || EQC_LOGO_id == null) {
@@ -104,6 +105,7 @@ export const updateActivoById = async (req, res) => {
       .input("EQC_cambio",sql.Decimal,EQC_cambio)
       .input("EQC_estadoEquipo",sql.Decimal,EQC_estadoEquipo)
       .input("EQC_observacion",sql.VarChar,EQC_observacion)
+      .input("EQC_TI_id", sql.Decimal, EQC_TI_id)
       .query(querys.updateActivoById);
 
    if(result.rowsAffected==1){
@@ -173,8 +175,6 @@ export const getTotalActivos = async (req, res) => {
   res.json(result.recordset[0][""]);
 };
 
-
-
 export const getActivosXUsuario = async (req, res) => {
   try {
     const pool = await getConnection();
@@ -182,6 +182,17 @@ export const getActivosXUsuario = async (req, res) => {
     .input("idUsuario", req.params.idUsuario)
     
     .query(querys.getActivoByUsuario);
+    res.json(result.recordset);
+  } catch (error) {
+    res.status(500);
+    res.send(error.message);
+  }
+};
+
+export const getTipoInventario = async (req, res) => {
+  try {
+    const pool = await getConnection();
+    const result = await pool.request().query(querys.getAllTipoInventario);
     res.json(result.recordset);
   } catch (error) {
     res.status(500);
