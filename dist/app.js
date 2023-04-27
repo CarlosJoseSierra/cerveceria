@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _express = _interopRequireDefault(require("express"));
 var _puppeteer = _interopRequireDefault(require("puppeteer"));
-var _cors = _interopRequireDefault(require("cors"));
 var _activosRouter = _interopRequireDefault(require("./routes/activos.router.js"));
 var _cargos = _interopRequireDefault(require("./routes/cargos.router"));
 var _equiposRouter = _interopRequireDefault(require("./routes/equipos.router.js"));
@@ -20,13 +19,16 @@ var _marcaRouter = _interopRequireDefault(require("./routes/marca.router.js"));
 var _localizacionRouter = _interopRequireDefault(require("./routes/localizacion.router.js"));
 var _infoRouter = _interopRequireDefault(require("./routes/info.router.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+//import cors from "cors";
+
 //import morgan from "morgan";
 //import config from "./config.js";
-var puppeteer = require("puppeteer");
+var cors = require("cors");
+//const puppeteer = require("puppeteer");
 var app = (0, _express["default"])();
 
 // Middlewares
-app.use((0, _cors["default"])());
+app.use(cors());
 //app.use(morgan("dev"));
 app.use(_express["default"].urlencoded({
   extended: false

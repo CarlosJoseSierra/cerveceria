@@ -1,6 +1,6 @@
 import express from "express";
 import pupeteer from "puppeteer";
-import cors from "cors";
+//import cors from "cors";
 import activoRoutes from "./routes/activos.router.js";
 import cargoRoutes from "./routes/cargos.router";
 import equipoRoutes from "./routes/equipos.router.js";
@@ -17,7 +17,8 @@ import infoRoutes from "./routes/info.router.js";
 
 //import morgan from "morgan";
 //import config from "./config.js";
-const puppeteer = require("puppeteer");
+const cors = require("cors");
+//const puppeteer = require("puppeteer");
 const app = express();
 
 // Middlewares

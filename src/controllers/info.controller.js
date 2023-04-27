@@ -1,7 +1,7 @@
 const puppeteer = require("puppeteer");
 const express = require("express");
 const jwt = require('jsonwebtoken');
-import cors from "cors";
+const cors = require("cors");
 const app = express();
 app.use(cors());
 export const getByInfo = async (req, res) => {
