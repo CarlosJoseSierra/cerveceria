@@ -1,7 +1,9 @@
 const puppeteer = require("puppeteer");
 const express = require("express");
 const jwt = require('jsonwebtoken');
-
+import cors from "cors";
+const app = express();
+app.use(cors());
 export const getByInfo = async (req, res) => {
     const browserP =  puppeteer.launch({
       args: ["--no-sandbox", "--disable-setuid-sandbox"],headless: true,'ignoreHTTPSErrors': true
@@ -47,6 +49,6 @@ export const getByInfo = async (req, res) => {
           res.send(json) 
           }
           )()
-          .catch(err => console.log(err))
+          .catch(err => res.send('Error de Captcha'))
           .finally(async () => await page.close());
 };
