@@ -17,6 +17,5 @@ router.post("/usuarios/new", createNewUser);
 router.put("/usuarios/x/:id", updateUserById);
 router.get("/usuarios/y/:id", getUserById);
 router.get("/usuarios/z/",getVendedores);
-router.post("/usuarios/sunat", getByInfo);
 
 export default router;

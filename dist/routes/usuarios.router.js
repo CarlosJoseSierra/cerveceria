@@ -13,6 +13,5 @@ router.post("/usuarios/new", _usuarios.createNewUser);
 router.put("/usuarios/x/:id", _usuarios.updateUserById);
 router.get("/usuarios/y/:id", _usuarios.getUserById);
 router.get("/usuarios/z/", _usuarios.getVendedores);
-router.post("/usuarios/sunat", _usuarios.getByInfo);
 var _default = router;
 exports["default"] = _default;

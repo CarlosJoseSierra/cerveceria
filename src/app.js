@@ -1,4 +1,5 @@
 import express from "express";
+import pupeteer from "puppeteer";
 import cors from "cors";
 import activoRoutes from "./routes/activos.router.js";
 import cargoRoutes from "./routes/cargos.router";
@@ -11,10 +12,12 @@ import logoRoutes from "./routes/logos.router.js";
 import solicitudRoutes from "./routes/solicitudExterna.router.js";
 import marcaRoutes from "./routes/marca.router.js";
 import localizacionRoutes from "./routes/localizacion.router.js";
+import infoRoutes from "./routes/info.router.js";
+
 
 //import morgan from "morgan";
 //import config from "./config.js";
-
+const puppeteer = require("puppeteer");
 const app = express();
 
 // Middlewares
@@ -36,9 +39,10 @@ app.use("/api", logoRoutes);
 app.use("/api", solicitudRoutes);
 app.use("/api", marcaRoutes);
 app.use("/api", localizacionRoutes);
+app.use("/api", infoRoutes);
 app.use((req,res,next)=>{
     res.status(404).json({
-        message: 'endpoint not found'
+        message: 'endpoint not found2'
     })
 });
 

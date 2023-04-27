@@ -50,3 +50,14 @@ Content-Type: application/json
     "description": "some laptop",
     "quantity": "20"
 }
+
+@api10 = http://localhost:3000/api/info
+
+### post correo
+POST {{api10}}
+Content-Type: application/json
+
+{
+    "documento": "0911615557",
+    "captcha": "03AL8dmw8ukCpq-CaqQObFm_FWHv1Q3z6L_zHElBhPGwIvAWm2t4Otlw448pzBQMzcHK0vnPigFKEGsjKHAyHKOIsKMqNuIWf2wQIFTSbGbNMxt1E0uVRz0EO9S-8aJgZl1QThcKQNqiGekA2-IWn4-mFUd87g0UxdKs1OyDg4Qp_GNbWObBdLaa8wZuZrVrnmCov46k9jdJe-oxxH8znRcCGxCJ5c3E8ureyqEoNu_wUl7RVl4C8u7zMfCis0kW2m5vgPjZZW6kLKpBZTuuUN1XjNBrYreJcq5201cDRBAj5epzsBOsJfPkxODbjEzCxlLLLIEJYG_AqjRByZ3G77WoUSyKW36HmXHXOgcQHJYRIRHPCvEc_A24CEvGA2ImY_cJzxybkj2nETfTZ-CpM6VDLEhW5ufFOLtPmUQHb_PB8hLFuKpChcoOZ63qL5b_l0R9wAuCSqqZ7d5g-9uINQpg8JyLYjBB6lkJyXar_kzldfkwZ6yyJH-xS5_a-T-h1kyn-qr8oQk9Ibp5REgNG6blaJ7q6cJDAdC2Y2x6Xwxnu5wY6CVm7EWmkWr3d_D9sIofhKB64zv-A5"
+}

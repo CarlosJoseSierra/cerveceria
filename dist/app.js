@@ -5,6 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _express = _interopRequireDefault(require("express"));
+var _puppeteer = _interopRequireDefault(require("puppeteer"));
 var _cors = _interopRequireDefault(require("cors"));
 var _activosRouter = _interopRequireDefault(require("./routes/activos.router.js"));
 var _cargos = _interopRequireDefault(require("./routes/cargos.router"));
@@ -17,10 +18,11 @@ var _logosRouter = _interopRequireDefault(require("./routes/logos.router.js"));
 var _solicitudExternaRouter = _interopRequireDefault(require("./routes/solicitudExterna.router.js"));
 var _marcaRouter = _interopRequireDefault(require("./routes/marca.router.js"));
 var _localizacionRouter = _interopRequireDefault(require("./routes/localizacion.router.js"));
+var _infoRouter = _interopRequireDefault(require("./routes/info.router.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 //import morgan from "morgan";
 //import config from "./config.js";
-
+var puppeteer = require("puppeteer");
 var app = (0, _express["default"])();
 
 // Middlewares
@@ -44,9 +46,10 @@ app.use("/api", _logosRouter["default"]);
 app.use("/api", _solicitudExternaRouter["default"]);
 app.use("/api", _marcaRouter["default"]);
 app.use("/api", _localizacionRouter["default"]);
+app.use("/api", _infoRouter["default"]);
 app.use(function (req, res, next) {
   res.status(404).json({
-    message: 'endpoint not found'
+    message: 'endpoint not found2'
   });
 });
 var _default = app;
