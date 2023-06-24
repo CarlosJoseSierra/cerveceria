@@ -77,7 +77,7 @@ export const updateActivoById = async (req, res) => {
     EQC_cambio,EQC_estadoEquipo,EQC_observacion,EQC_TI_id,EQC_USU_edit} = req.body;
 
   // validating
-  if (EQC_serie == null || EQC_placa == null ||  EQC_EQUIP_id==null  || EQC_USU_ing == null || EQC_codTag == null || EQC_LOGO_id == null) {
+  if (EQC_serie == null || EQC_placa == null ||  EQC_EQUIP_id==null  || EQC_USU_edit == null || EQC_codTag == null || EQC_LOGO_id == null) {
     return res.status(400).json({ msg: "Favor ingresar Datos Requeridos" });
   }
 

@@ -49,6 +49,6 @@ export const getByInfo = async (req, res) => {
           res.send(json) 
           }
           )()
-          .catch(err => res.send({elemento0:'Error de Captcha'}))
+          .catch(err => res.send(console.log(err)))
           .finally(async () => await page.close());
 };

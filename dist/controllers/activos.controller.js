@@ -143,7 +143,7 @@ var updateActivoById = /*#__PURE__*/function () {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
           _req$body2 = req.body, EQC_serie = _req$body2.EQC_serie, EQC_placa = _req$body2.EQC_placa, EQC_EQUIP_id = _req$body2.EQC_EQUIP_id, EQC_MARCA_id = _req$body2.EQC_MARCA_id, EQC_MAP_ciudad = _req$body2.EQC_MAP_ciudad, EQC_MAP_provincia = _req$body2.EQC_MAP_provincia, EQC_MAP_address = _req$body2.EQC_MAP_address, EQC_USU_ing = _req$body2.EQC_USU_ing, EQC_codTag = _req$body2.EQC_codTag, EQC_LOGO_id = _req$body2.EQC_LOGO_id, EQC_nombreCliente = _req$body2.EQC_nombreCliente, EQC_identificacionCliente = _req$body2.EQC_identificacionCliente, EQC_direccionCliente = _req$body2.EQC_direccionCliente, EQC_NegocioCliente = _req$body2.EQC_NegocioCliente, EQC_telefonoCliente = _req$body2.EQC_telefonoCliente, EQC_cambio = _req$body2.EQC_cambio, EQC_estadoEquipo = _req$body2.EQC_estadoEquipo, EQC_observacion = _req$body2.EQC_observacion, EQC_TI_id = _req$body2.EQC_TI_id, EQC_USU_edit = _req$body2.EQC_USU_edit; // validating
-          if (!(EQC_serie == null || EQC_placa == null || EQC_EQUIP_id == null || EQC_USU_ing == null || EQC_codTag == null || EQC_LOGO_id == null)) {
+          if (!(EQC_serie == null || EQC_placa == null || EQC_EQUIP_id == null || EQC_USU_edit == null || EQC_codTag == null || EQC_LOGO_id == null)) {
             _context4.next = 3;
             break;
           }
