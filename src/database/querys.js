@@ -70,4 +70,6 @@ export const querys = {
     getAllProvincia:"SELECT DISTINCT(EQC_MAP_provincia) FROM EQUIPO_COMPLETO ORDER BY EQC_MAP_provincia",
 
     getAllUbicacion: "SELECT UBIC_id, UBIC_ciudad, UBIC_provincia FROM UBICACION ORDER BY UBIC_ciudad",
+
+    getDataEtiquetas: "SELECT T.TI_descripcion AS DESCRIPCION,COUNT(DISTINCT(T.EQC_id))AS CANTIDAD FROM(SELECT EQC_TI_id,EQC_id,TI_descripcion FROM EQUIPO_COMPLETO INNER JOIN TIPO_INVENTARIO ON EQC_TI_id = TI_id) T GROUP BY T.TI_descripcion",
 };
