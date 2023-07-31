@@ -14,6 +14,7 @@ import {
   getHistTotalEntregado,
   getHistTotalReparado,
   getHistTotalDisponible,
+  getEtiquetas,
 
 } from "../controllers/historial.controller";
 
