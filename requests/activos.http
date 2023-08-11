@@ -85,3 +85,7 @@ Content-Type: application/json
 }
 
 
+@api10 = http://localhost:3000/api/ubicacion
+
+### get product
+{{api10}}
