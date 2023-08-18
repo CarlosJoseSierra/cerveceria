@@ -24,7 +24,8 @@ var querys = {
   getAllUsuarios: "SELECT * FROM USUARIOS",
   getUsuarioById: "SELECT * FROM USUARIOS Where USU_id = @Id",
   getUserPass: "SELECT * FROM USUARIOS Where USU_usuario like @USU_usuario",
-  getVendedores: "SELECT USU_nombre FROM USUARIOS where USU_ROL like 'VENDEDOR'",
+  //getVendedores:"SELECT AS USU_nombre FROM USUARIOS where USU_ROL like 'VENDEDOR'",
+  getVendedores: "SELECT DISTINCT(EQC_identificacionCliente) AS USU_nombre FROM EQUIPO_COMPLETO ORDER BY EQC_identificacionCliente",
   //Querys Tabla Historial Equipos
   getTopFiveItems: "SELECT TOP 5 count(AS_DET_cantidad) AS CANTIDAD, AS_DET_PROD_descripcion AS DESCRIPCION FROM AREA_SERVICIODETALLE INNER JOIN AREA_SERVICIO ON AS_DET_AS_id = AS_id WHERE (AS_DET_Estado = 1 ) AND (AS_CLI_id = @id OR AS_CLI_id = @id2) and (AS_OT_id>1)  AND AS_DET_PROD_codigo like 'SERVICIO' GROUP BY AS_DET_PROD_descripcion ORDER BY CANTIDAD DESC",
   geoTotalItemsServicios: "SELECT TOP 5 count(AS_DET_cantidad) AS CANTIDAD, AS_DET_PROD_descripcion AS DESCRIPCION FROM AREA_SERVICIODETALLE INNER JOIN AREA_SERVICIO ON AS_DET_AS_id = AS_id WHERE (AS_DET_Estado = 1 ) AND (AS_OT_id>1)  AND AS_DET_PROD_codigo like 'SERVICIO' GROUP BY AS_DET_PROD_descripcion ORDER BY CANTIDAD DESC",
