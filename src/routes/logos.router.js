@@ -45,4 +45,7 @@ router.get("/logosco/:id", getCondicionById);
 router.get("/logosi", getInstalacion);
 router.get("/logosi/:id", getInstalacionById);
 
+
+router.get("/logosz", getLogos);
+router.get("/logosz/:id", getLogoById);
 export default router;
