@@ -95,4 +95,8 @@ export const querys = {
     getCondicionById: "SELECT COND_id, COND_descripcion FROM CONDICION WHERE COND_id = @id",
     getAllInstalacion:"SELECT INST_id, INST_descripcion FROM INSTALACION",
     getInstalacionById: "SELECT INST_id, INST_descripcion FROM INSTALACION WHERE INST_id = @id",
+    getAllAtencion:"SELECT ATENC_id, ATENC_descripcion FROM ATENCION",
+    getAtencionById: "SELECT ATENC_id, ATENC_descripcion FROM ATENCION WHERE ATENC_id = @id",
+    getAllNumCuerpos: "SELECT NUM_CUE_id, NUM_CUE_descripcion FROM NUMERO_CUERPOS",
+    getNumCuerposById: "SELECT NUM_CUE_id, NUM_CUE_descripcion FROM NUMERO_CUERPOS WHERE NUM_CUE_id = @id",
 };

@@ -19,30 +19,42 @@ import {
   getCondicion,
   getCondicionById,
   getInstalacion,
-  getInstalacionById
+  getInstalacionById,
+  getSubCanal,
+  getSubCanalById,
+  getAtencion,
+  getAtencionById,
+  getNumCuerpos,
+  getNumCuerposById
 } from "../controllers/logos.controller";
 
 const router = Router();
 
 router.get("/logos", getLogos);
 router.get("/logos/:id", getLogoById);
-router.get("/logosc", getCanal);
-router.get("/logosc/:id", getCanalById);
-router.get("/logosv", getVendedor);
-router.get("/logosv/:id", getVendedorById);
-router.get("/logossc", getSubEstado);
-router.get("/logossc/:id", getSubEstadoById);
-router.get("/logosse", getSegmento);
-router.get("/logosse/:id", getSegmentoById);
-router.get("/logossu", getSupervisor);
-router.get("/logossu/:id", getSupervisorById);
-router.get("/logosss", getSubsegmentacion);
-router.get("/logosss/:id", getSubsegmentacionById);
-router.get("/logoste", getTipoEquipo);
-router.get("/logoste/:id", getTipoEquipoById);
-router.get("/logosco", getCondicion);
-router.get("/logosco/:id", getCondicionById);
-router.get("/logosi", getInstalacion);
-router.get("/logosi/:id", getInstalacionById);
+router.get("/logosSE", getSubEstado);
+router.get("/logosSE/:id", getSubEstadoById);
+router.get("/logosC", getCanal);
+router.get("/logosC/:id", getCanalById);
+router.get("/logosSC", getSubCanal);
+router.get("/logosSC/:id", getSubCanalById);
+router.get("/logosA", getAtencion);
+router.get("/logosA/:id", getAtencionById);
+router.get("/logosV", getVendedor);
+router.get("/logosV/:id", getVendedorById);
+router.get("/logosSU", getSupervisor);
+router.get("/logosSU/:id", getSupervisorById);
+router.get("/logosSE", getSegmento);
+router.get("/logosSE/:id", getSegmentoById);
+router.get("/logosSS", getSubsegmentacion);
+router.get("/logosSS/:id", getSubsegmentacionById);
+router.get("/logosTE", getTipoEquipo);
+router.get("/logosTE/:id", getTipoEquipoById);
+router.get("/logosNC", getNumCuerpos);
+router.get("/logosNC/:id", getNumCuerposById);
+router.get("/logosCO", getCondicion);
+router.get("/logosCO/:id", getCondicionById);
+router.get("/logosI", getInstalacion);
+router.get("/logosI/:id", getInstalacionById);
 
 export default router;
