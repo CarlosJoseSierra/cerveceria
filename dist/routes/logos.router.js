@@ -27,7 +27,5 @@ router.get("/logosco", _logos.getCondicion);
 router.get("/logosco/:id", _logos.getCondicionById);
 router.get("/logosi", _logos.getInstalacion);
 router.get("/logosi/:id", _logos.getInstalacionById);
-router.get("/logosz", _logos.getLogos);
-router.get("/logosz/:id", _logos.getLogoById);
 var _default = router;
 exports["default"] = _default;
