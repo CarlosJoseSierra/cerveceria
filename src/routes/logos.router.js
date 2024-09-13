@@ -25,7 +25,8 @@ import {
   getAtencion,
   getAtencionById,
   getNumCuerpos,
-  getNumCuerposById
+  getNumCuerposById,
+  getProvincia
 } from "../controllers/logos.controller";
 
 const router = Router();
@@ -56,5 +57,5 @@ router.get("/logosCO", getCondicion);
 router.get("/logosCO/:id", getCondicionById);
 router.get("/logosI", getInstalacion);
 router.get("/logosI/:id", getInstalacionById);
-
+router.get("/logosPR", getProvincia);
 export default router;

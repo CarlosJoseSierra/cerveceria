@@ -99,4 +99,5 @@ export const querys = {
     getAtencionById: "SELECT ATENC_id, ATENC_descripcion FROM ATENCION WHERE ATENC_id = @id",
     getAllNumCuerpos: "SELECT NUM_CUE_id, NUM_CUE_descripcion FROM NUMERO_CUERPOS",
     getNumCuerposById: "SELECT NUM_CUE_id, NUM_CUE_descripcion FROM NUMERO_CUERPOS WHERE NUM_CUE_id = @id",
+    getAllProvincia: "SELECT PROV_id, PROV_descripcion FROM PROVINCIA",
 };

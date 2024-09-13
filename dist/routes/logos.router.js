@@ -33,5 +33,6 @@ router.get("/logosCO", _logos.getCondicion);
 router.get("/logosCO/:id", _logos.getCondicionById);
 router.get("/logosI", _logos.getInstalacion);
 router.get("/logosI/:id", _logos.getInstalacionById);
+router.get("/logosPR", _logos.getProvincia);
 var _default = router;
 exports["default"] = _default;
