@@ -23,46 +23,49 @@ export const getcountActivo = async (req, res) => {
 };
 
 export const createNewActivo = async (req, res) => {
-  const { EQC_serie, EQC_placa, EQC_EQUIP_id,EQC_MARCA_id,EQC_MAP_ciudad,EQC_MAP_provincia,EQC_MAP_address,EQC_USU_ing,
-    EQC_codTag,EQC_LOGO_id,EQC_nombreCliente,EQC_identificacionCliente,EQC_direccionCliente,EQC_NegocioCliente,
-    EQC_telefonoCliente,EQC_cambio,EQC_estadoEquipo,EQC_observacion,EQC_TI_id,EQC_USU_edit,EQC_UBIC_id,
-    EQC_provincia,EQC_cabezales, EQC_SubCanal, EQC_Grupocliente} = req.body;
   
-  // validating
-  if (EQC_serie == null || EQC_placa == null ||  EQC_EQUIP_id==null || EQC_USU_ing == null || EQC_codTag == null || EQC_LOGO_id == null) {
-    return res.status(400).json({ msg: "Favor ingresar Datos Requeridos" });
-  }
-
   try {
     const pool = await getConnection();
     const result = await pool
       .request()
-      .input("EQC_serie", sql.VarChar, EQC_serie)
-      .input("EQC_placa", sql.VarChar, EQC_placa)
-      .input("EQC_EQUIP_id", sql.Decimal, EQC_EQUIP_id)
-      .input("EQC_MARCA_id", sql.Decimal, EQC_MARCA_id)
-      .input("EQC_MAP_ciudad", sql.VarChar, EQC_MAP_ciudad)
-      .input("EQC_MAP_provincia", sql.VarChar, EQC_MAP_provincia)
-      .input("EQC_MAP_address", sql.VarChar, EQC_MAP_address)
-      .input("EQC_USU_ing", sql.Decimal, EQC_USU_ing)
-      .input("EQC_USU_edit", sql.Decimal, EQC_USU_edit)
-      .input("EQC_codTag", sql.VarChar, EQC_codTag)
-      .input("EQC_LOGO_id", sql.Decimal, EQC_LOGO_id)
-      .input("EQC_nombreCliente", sql.VarChar, EQC_nombreCliente)
-      .input("EQC_identificacionCliente", sql.VarChar, EQC_identificacionCliente)
-      .input("EQC_direccionCliente", sql.VarChar, EQC_direccionCliente)
-      .input("EQC_NegocioCliente", sql.VarChar, EQC_NegocioCliente)
-      .input("EQC_telefonoCliente", sql.VarChar, EQC_telefonoCliente)
-      .input("EQC_cambio",sql.Decimal,EQC_cambio)
-      .input("EQC_estadoEquipo",sql.Decimal,EQC_estadoEquipo)
-      .input("EQC_observacion",sql.VarChar,EQC_observacion)
-      .input("EQC_TI_id", sql.Decimal, EQC_TI_id)
-      .input("EQC_UBIC_id",sql.Decimal,EQC_UBIC_id)
-      .input("EQC_provincia",sql.VarChar,EQC_provincia)
-      .input("EQC_cabezales", sql.Decimal, EQC_cabezales)
-      .input("EQC_SubCanal", sql.VarChar, EQC_SubCanal)
-      .input("EQC_Grupocliente", sql.VarChar, EQC_Grupocliente)
-      
+      .input("EQC_numEquipo", sql.VarChar, req.body.NumEquipo)
+      .input("EQC_activoFijo", sql.VarChar, req.body.ActivoFijo)
+      .input("EQC_EQUIP_id", sql.Decimal, req.body.Modelo)
+      .input("EQC_MARCA_id", sql.Decimal, req.body.Marca)
+      .input("EQC_MAP_ciudad", sql.VarChar, req.body.ciudad)
+      .input("EQC_MAP_provincia", sql.VarChar, req.body.provincia)
+      .input("EQC_MAP_address", sql.VarChar, req.body.address)
+      .input("EQC_USU_ing", sql.Decimal, req.body.USU_ing)
+      .input("EQC_codTag", sql.VarChar, req.body.CodTag)
+      .input("EQC_ATENC_id", sql.Decimal, req.body.Atencion)
+      .input("EQC_nombreCliente", sql.VarChar, req.body.Nombre_Cliente)
+      .input("EQC_VEND_id", sql.Decimal, req.body.Distribuidor)
+      .input("EQC_direccionCliente", sql.VarChar, req.body.Direccion_Cliente)
+      .input("EQC_NegocioCliente", sql.VarChar, req.body.Local)
+      .input("EQC_CANAL_id", sql.Decimal, req.body.Canal)
+      .input("EQC_estadoEquipo",sql.Decimal,req.body.Estado)
+      .input("EQC_cambio",sql.Decimal,req.body.EQC_cambio)
+      .input("EQC_observacion",sql.VarChar,req.body.Observacion)
+      .input("EQC_SUBEST_id", sql.Decimal, req.body.SubEstado)
+      .input("EQC_UBIC_id",sql.Decimal,req.body.Ubicacion)
+      .input("EQC_provincia",sql.VarChar,req.body.ubicacion)
+      .input("EQC_NUM_CUE_id", sql.Decimal, req.body.NumCuerpo)
+      .input("EQC_SUBCAN_id", sql.Decimal, req.body.SubCanal)
+      .input("EQC_SEG_id", sql.Decimal, req.body.Segmento)
+      .input("EQC_CodigoSap", sql.VarChar, req.body.CodigoSap)
+      .input("EQC_RucCedula", sql.VarChar, req.body.RUC)
+      .input("EQC_SUP_id", sql.Decimal, req.body.Supervisor)
+      .input("EQC_SUBSEG_id", sql.Decimal, req.body.SegmentoCliente)
+      .input("EQC_local", sql.VarChar, req.body.Local)
+      .input("EQC_coordenadas", sql.VarChar, req.body.Coordenadas)
+      .input("EQC_contacto", sql.VarChar, req.body.Contacto)
+      .input("EQC_correo", sql.VarChar, req.body.Correo)
+      .input("EQC_TE_id", sql.Decimal, req.body.TipoEquipo)
+      .input("EQC_CodigoSapActivo", sql.VarChar, req.body.CodigoSapActivo)
+      .input("EQC_fechaInstalacion", sql.Date, req.body.FechaInstalacion)
+      .input("EQC_INST_id", sql.Decimal, req.body.Instalacion)
+      .input("EQC_COND_id", sql.Decimal, req.body.Condicion)
+      .input("EQC_telefonoCliente", sql.VarChar, req.body.Telefono)
       .query(querys.addNewActivo);
       if(result.rowsAffected==1){
         return res.status(200).json({ status: "ok", msg: "Registro exitoso" ,token:0});
@@ -78,16 +81,6 @@ export const createNewActivo = async (req, res) => {
 };
 
 export const updateActivoById = async (req, res) => {
-  const { EQC_serie, EQC_placa, EQC_EQUIP_id,EQC_MARCA_id,EQC_MAP_ciudad,EQC_MAP_provincia,EQC_MAP_address,EQC_USU_ing,
-    EQC_codTag,EQC_LOGO_id,EQC_nombreCliente,EQC_identificacionCliente,EQC_direccionCliente,EQC_NegocioCliente,EQC_telefonoCliente,
-    EQC_cambio,EQC_estadoEquipo,EQC_observacion,EQC_TI_id,EQC_USU_edit,EQC_UBIC_id,
-    EQC_provincia,EQC_cabezales,EQC_SubCanal, EQC_Grupocliente} = req.body;
-
-  // validating
-  if (EQC_serie == null || EQC_placa == null ||  EQC_EQUIP_id==null  || EQC_USU_edit == null || EQC_codTag == null || EQC_LOGO_id == null) {
-    return res.status(400).json({ msg: "Favor ingresar Datos Requeridos" });
-  }
-
   try {
     //console.log('no se conecto');
     const pool = await getConnection();
@@ -95,30 +88,44 @@ export const updateActivoById = async (req, res) => {
     const result = await pool
       .request()
       .input("id", req.params.id)
-      .input("EQC_serie", sql.VarChar, EQC_serie)
-      .input("EQC_placa", sql.VarChar, EQC_placa)
-      .input("EQC_EQUIP_id", sql.Decimal, EQC_EQUIP_id)
-      .input("EQC_MARCA_id", sql.Decimal, EQC_MARCA_id)
-      .input("EQC_MAP_ciudad", sql.VarChar, EQC_MAP_ciudad)
-      .input("EQC_MAP_provincia", sql.VarChar, EQC_MAP_provincia)
-     // .input("EQC_MAP_address", sql.VarChar, EQC_MAP_address)
-      .input("EQC_USU_edit", sql.Decimal, EQC_USU_edit)
-      .input("EQC_codTag", sql.VarChar, EQC_codTag)
-      .input("EQC_LOGO_id", sql.Decimal, EQC_LOGO_id)
-      .input("EQC_nombreCliente", sql.VarChar, EQC_nombreCliente)
-      .input("EQC_identificacionCliente", sql.VarChar, EQC_identificacionCliente)
-      .input("EQC_direccionCliente", sql.VarChar, EQC_direccionCliente)
-      .input("EQC_NegocioCliente", sql.VarChar, EQC_NegocioCliente)
-      .input("EQC_telefonoCliente",sql.VarChar,EQC_telefonoCliente)
-      .input("EQC_cambio",sql.Decimal,EQC_cambio)
-      .input("EQC_estadoEquipo",sql.Decimal,EQC_estadoEquipo)
-      .input("EQC_observacion",sql.VarChar,EQC_observacion)
-      .input("EQC_TI_id", sql.Decimal, EQC_TI_id)
-      .input("EQC_UBIC_id",sql.Decimal,EQC_UBIC_id)
-      .input("EQC_provincia",sql.VarChar,EQC_provincia)
-      .input("EQC_cabezales", sql.Decimal, EQC_cabezales)
-      .input("EQC_SubCanal", sql.VarChar, EQC_SubCanal)
-      .input("EQC_Grupocliente", sql.VarChar, EQC_Grupocliente)
+      .input("EQC_numEquipo", sql.VarChar, req.body.NumEquipo)
+      .input("EQC_activoFijo", sql.VarChar, req.body.ActivoFijo)
+      .input("EQC_EQUIP_id", sql.Decimal, req.body.Modelo)
+      .input("EQC_MARCA_id", sql.Decimal, req.body.Marca)
+      .input("EQC_MAP_ciudad", sql.VarChar, req.body.ciudad)
+      .input("EQC_MAP_provincia", sql.VarChar, req.body.provincia)
+      .input("EQC_MAP_address", sql.VarChar, req.body.address)
+      .input("EQC_USU_edit", sql.Decimal, req.body.USU_ing)
+      .input("EQC_codTag", sql.VarChar, req.body.CodTag)
+      .input("EQC_ATENC_id", sql.Decimal, req.body.Atencion)
+      .input("EQC_nombreCliente", sql.VarChar, req.body.Nombre_Cliente)
+      .input("EQC_VEND_id", sql.Decimal, req.body.Distribuidor)
+      .input("EQC_direccionCliente", sql.VarChar, req.body.Direccion_Cliente)
+      .input("EQC_NegocioCliente", sql.VarChar, req.body.Local)
+      .input("EQC_CANAL_id", sql.Decimal, req.body.Canal)
+      .input("EQC_estadoEquipo",sql.Decimal,req.body.Estado)
+      .input("EQC_cambio",sql.Decimal,req.body.EQC_cambio)
+      .input("EQC_observacion",sql.VarChar,req.body.Observacion)
+      .input("EQC_SUBEST_id", sql.Decimal, req.body.SubEstado)
+      .input("EQC_UBIC_id",sql.Decimal,req.body.Ubicacion)
+      .input("EQC_provincia",sql.VarChar,req.body.ubicacion)
+      .input("EQC_NUM_CUE_id", sql.Decimal, req.body.NumCuerpo)
+      .input("EQC_SUBCAN_id", sql.Decimal, req.body.SubCanal)
+      .input("EQC_SEG_id", sql.Decimal, req.body.Segmento)
+      .input("EQC_CodigoSap", sql.VarChar, req.body.CodigoSap)
+      .input("EQC_RucCedula", sql.VarChar, req.body.RUC)
+      .input("EQC_SUP_id", sql.Decimal, req.body.Supervisor)
+      .input("EQC_SUBSEG_id", sql.Decimal, req.body.SegmentoCliente)
+      .input("EQC_local", sql.VarChar, req.body.Local)
+      .input("EQC_coordenadas", sql.VarChar, req.body.Coordenadas)
+      .input("EQC_contacto", sql.VarChar, req.body.Contacto)
+      .input("EQC_correo", sql.VarChar, req.body.Correo)
+      .input("EQC_TE_id", sql.Decimal, req.body.TipoEquipo)
+      .input("EQC_CodigoSapActivo", sql.VarChar, req.body.CodigoSapActivo)
+      .input("EQC_fechaInstalacion", sql.Date, req.body.FechaInstalacion)
+      .input("EQC_INST_id", sql.Decimal, req.body.Instalacion)
+      .input("EQC_COND_id", sql.Decimal, req.body.Condicion)
+      .input("EQC_telefonoCliente", sql.VarChar, req.body.Telefono)
       .query(querys.updateActivoById);
 
    if(result.rowsAffected==1){
