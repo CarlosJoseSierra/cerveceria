@@ -47,7 +47,7 @@ export const createNewActivo = async (req, res) => {
       .input("EQC_cambio",sql.Decimal,req.body.EQC_cambio)
       .input("EQC_observacion",sql.VarChar,req.body.Observacion)
       .input("EQC_SUBEST_id", sql.Decimal, req.body.SubEstado)
-      .input("EQC_UBIC_id",sql.Decimal,req.body.Ubicacion)
+      .input("EQC_UBIC_id",sql.Decimal,req.body.Ciudad)
       .input("EQC_provincia",sql.VarChar,req.body.ubicacion)
       .input("EQC_NUM_CUE_id", sql.Decimal, req.body.NumCuerpo)
       .input("EQC_SUBCAN_id", sql.Decimal, req.body.SubCanal)
