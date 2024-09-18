@@ -95,7 +95,7 @@ export const updateActivoById = async (req, res) => {
       .input("EQC_MAP_ciudad", sql.VarChar, req.body.ciudad)
       .input("EQC_MAP_provincia", sql.VarChar, req.body.provincia)
       .input("EQC_MAP_address", sql.VarChar, req.body.address)
-      .input("EQC_USU_edit", sql.Decimal, req.body.USU_ing)
+      .input("EQC_USU_ing", sql.Decimal, req.body.USU_ing)
       .input("EQC_codTag", sql.VarChar, req.body.CodTag)
       .input("EQC_ATENC_id", sql.Decimal, req.body.Atencion)
       .input("EQC_nombreCliente", sql.VarChar, req.body.Nombre_Cliente)
