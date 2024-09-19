@@ -4,11 +4,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.querys = void 0;
+var _querys;
 function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
 function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 function _toPropertyKey(arg) { var key = _toPrimitive(arg, "string"); return _typeof(key) === "symbol" ? key : String(key); }
 function _toPrimitive(input, hint) { if (_typeof(input) !== "object" || input === null) return input; var prim = input[Symbol.toPrimitive]; if (prim !== undefined) { var res = prim.call(input, hint || "default"); if (_typeof(res) !== "object") return res; throw new TypeError("@@toPrimitive must return a primitive value."); } return (hint === "string" ? String : Number)(input); }
-var querys = _defineProperty({
+var querys = (_querys = {
   //Querys Tabla Equipo_Completo
   getAllActivos: "SELECT EQC_id,EQC_numEquipo,EQC_activoFijo,EQC_EQUIP_id,EQUIP_modelo,EQUIP_descripcion,EQC_MARCA_id,MARCA_descripcion,EQC_MAP_ciudad,EQC_MAP_provincia,EQC_MAP_address,EQC_USU_ing,USU_nombre,EQC_fecha_ing,EQC_codTag,EQC_ATENC_id,ATENC_descripcion,EQC_nombreCliente,EQC_VEND_id,VEND_nombres,EQC_direccionCliente,EQC_NegocioCliente,EQC_CANAL_id,CANAL_descripcion,EQC_cambio,EQC_estadoEquipo,EQC_observacion,EQC_SUBEST_id,SUBEST_descripcion,EQC_UBIC_id,UBIC_ciudad,UBIC_PROV_id,EQC_provincia,EQC_NUM_CUE_id,NUM_CUE_descripcion,EQC_SUBCAN_id,SUBCAN_descripcion,EQC_SEG_id,SEG_descripcion,EQC_CodigoSap,EQC_RucCedula,EQC_SUP_id,SUP_descripcion,EQC_SUBSEG_id,SUBSEG_descripcion,EQC_local,EQC_coordenadas,EQC_contacto, EQC_correo,EQC_TE_id,TE_descripcion,EQC_CodigoSapActivo,CONVERT(varchar,EQC_fechaInstalacion,3) AS EQC_fechaInstalacion,CONVERT(varchar,EQC_fechaInstalacion,1) AS EQC_fechaInstalacionTmp,EQC_INST_id,INST_descripcion,EQC_COND_id,COND_descripcion,EQC_telefonoCliente FROM EQUIPO_COMPLETO AS E INNER JOIN EQUIPO ON EQC_EQUIP_id = EQUIP_id INNER JOIN ATENCION ON EQC_ATENC_id = ATENC_id INNER JOIN MARCA ON EQC_MARCA_id = MARCA_id INNER JOIN USUARIOS ON EQC_USU_ing = USU_id INNER JOIN UBICACION ON EQC_UBIC_id = UBIC_id INNER JOIN VENDEDOR ON EQC_VEND_id = VEND_id INNER JOIN CANAL ON EQC_CANAL_id = CANAL_id INNER JOIN SUBESTADO ON EQC_SUBEST_id = SUBEST_id INNER JOIN SUBCANAL ON EQC_SUBCAN_id = SUBCAN_id INNER JOIN SEGMENTO ON EQC_SEG_id = SEG_id INNER JOIN SUPERVISOR ON EQC_SUP_id = SUP_id INNER JOIN SUBSEGMENTACION ON EQC_SUBSEG_id = SUBSEG_id INNER JOIN TIPO_EQUIPO ON EQC_TE_id = TE_id INNER JOIN INSTALACION ON EQC_INST_id = INST_id INNER JOIN CONDICION ON EQC_COND_id = COND_id INNER JOIN NUMERO_CUERPOS ON EQC_NUM_CUE_id = NUM_CUE_id",
   getCountAllActive: "SELECT count(*) CONTEOEQUIPO FROM EQUIPO_COMPLETO",
@@ -22,8 +23,7 @@ var querys = _defineProperty({
   //Querys Tabla Tipo Inventario
   getAllTipoInventario: "SELECT TI_id, TI_descripcion FROM TIPO_INVENTARIO",
   //Querys Tabla Modelos de Equipos
-  getAllEquipos: "SELECT * FROM EQUIPO ORDER BY EQUIP_modelo",
-  getEquipoById: "SELECT * FROM EQUIPO Where EQ_id = @Id",
+
   //Querys Tabla Modelos de Usuarios
   getAllUsuarios: "SELECT * FROM USUARIOS",
   getUsuarioById: "SELECT * FROM USUARIOS Where USU_id = @Id",
@@ -58,9 +58,6 @@ var querys = _defineProperty({
   getAllCargos: "SELECT * FROM CARGO",
   addNewUser: "INSERT INTO USUARIOS(USU_nombre,USU_usuario,USU_clave,USU_cargo,USU_rol,USU_estado,USU_conectado) VALUES(@USU_nombre,@USU_usuario,@USU_clave,@USU_cargo,@USU_rol,1,0)",
   updateUserById: "UPDATE USUARIOS SET USU_nombre = @USU_nombre,USU_usuario = @USU_usuario,USU_clave = @USU_clave,USU_cargo = @USU_cargo,USU_rol = @USU_rol WHERE USU_id = @Id",
-  //Marcas
-  getAllMarcas: "SELECT MARCA_id,MARCA_descripcion FROM MARCA",
-  addNewMarca: "INSERT INTO MARCA(MARCA_id,MARCA_descripcion) VALUES(@MARCA_id,@MARCA_descripcion)",
   //getAllCiudad:"SELECT DISTINCT(EQC_MAP_ciudad) AS FROM EQUIPO_COMPLETO ORDER BY EQC_MAP_ciudad",
   getAllCiudad: "SELECT DISTINCT(EQC_provincia) AS EQC_MAP_ciudad FROM EQUIPO_COMPLETO ORDER BY EQC_provincia",
   getAllProvincia: "SELECT DISTINCT(EQC_provincia) AS EQC_MAP_provincia FROM EQUIPO_COMPLETO ORDER BY EQC_provincia",
@@ -69,16 +66,12 @@ var querys = _defineProperty({
   //09/09/2024
   getAllCanal: "SELECT CANAL_id, CANAL_descripcion FROM CANAL",
   getCanalById: "SELECT CANAL_id, CANAL_descripcion FROM CANAL WHERE CANAL_id = @id",
-  getAllVendedor: "SELECT VEND_id, VEND_nombres FROM VENDEDOR ORDER BY VEND_nombres",
-  getVendedorById: "SELECT VEND_id, VEND_nombres FROM VENDEDOR WHERE VEND_id = @id",
   getAllSubEstado: "SELECT SUBEST_id, SUBEST_descripcion FROM SUBESTADO",
   getSubEstadoById: "SELECT SUBEST_id, SUBEST_descripcion FROM SUBESTADO WHERE SUBEST_id = @id",
   getAllSubCanal: "SELECT SUBCAN_id, SUBCAN_descripcion FROM SUBCANAL ORDER BY SUBCAN_descripcion",
   getSubCanalById: "SELECT SUBCAN_id, SUBCAN_descripcion FROM SUBCANAL WHERE SUBCAN_id = @id",
   getAllSegmento: "SELECT SEG_id, SEG_descripcion FROM SEGMENTO",
   getSegmentoById: "SELECT SEG_id, SEG_descripcion FROM SEGMENTO WHERE SEG_id = @id",
-  getAllSupervisor: "SELECT SUP_id, SUP_descripcion FROM SUPERVISOR ORDER BY SUP_descripcion",
-  getSupervisorById: "SELECT SUP_id, SUP_descripcion FROM SUPERVISOR WHERE SUP_id = @id",
   getAllSubSegmentacion: "SELECT SUBSEG_id, SUBSEG_descripcion FROM SUBSEGMENTACION ORDER BY SUBSEG_descripcion",
   getSubsegmentacionById: "SELECT SUBSEG_id, SUBSEG_descripcion FROM SUBSEGMENTACION WHERE SUBSEG_id = @id",
   getAllTipoEquipo: "SELECT TE_id, TE_descripcion FROM TIPO_EQUIPO",
@@ -91,5 +84,5 @@ var querys = _defineProperty({
   getAtencionById: "SELECT ATENC_id, ATENC_descripcion FROM ATENCION WHERE ATENC_id = @id",
   getAllNumCuerpos: "SELECT NUM_CUE_id, NUM_CUE_descripcion FROM NUMERO_CUERPOS",
   getNumCuerposById: "SELECT NUM_CUE_id, NUM_CUE_descripcion FROM NUMERO_CUERPOS WHERE NUM_CUE_id = @id"
-}, "getAllProvincia", "SELECT PROV_id, PROV_descripcion FROM PROVINCIA");
+}, _defineProperty(_querys, "getAllProvincia", "SELECT PROV_id, PROV_descripcion FROM PROVINCIA"), _defineProperty(_querys, "getAllVendedor", "SELECT VEND_id, VEND_nombres FROM VENDEDOR ORDER BY VEND_nombres"), _defineProperty(_querys, "getVendedorById", "SELECT VEND_id, VEND_nombres FROM VENDEDOR WHERE VEND_id = @id"), _defineProperty(_querys, "addNewVendedor", "INSERT INTO VENDEDOR(VEND_nombres,VEND_estado) VALUES(@VEND_nombres,1)"), _defineProperty(_querys, "updateVendedorById", "UPDATE VENDEDOR SET VEND_nombres = @VEND_nombres WHERE USU_id = @Id"), _defineProperty(_querys, "getAllSupervisor", "SELECT SUP_id, SUP_descripcion FROM SUPERVISOR ORDER BY SUP_descripcion"), _defineProperty(_querys, "getSupervisorById", "SELECT SUP_id, SUP_descripcion FROM SUPERVISOR WHERE SUP_id = @id"), _defineProperty(_querys, "addNewVendedor", "INSERT INTO VENDEDOR(VEND_nombres,VEND_estado) VALUES(@VEND_nombres,1)"), _defineProperty(_querys, "updateVendedorById", "UPDATE VENDEDOR SET VEND_nombres = @VEND_nombres WHERE VEND_id = @Id"), _defineProperty(_querys, "getAllMarcas", "SELECT MARCA_id,MARCA_descripcion FROM MARCA ORDER BY MARCA_descripcion"), _defineProperty(_querys, "getMarcaById", "SELECT  MARCA_id,MARCA_descripcion FROM MARCA WHERE MARCA_id = @id"), _defineProperty(_querys, "addNewMarca", "INSERT INTO MARCA(MARCA_descripcion) VALUES(@MARCA_descripcion)"), _defineProperty(_querys, "updateMarcaById", "UPDATE MARCA SET MARCA_descripcion = @MARCA_descripcion WHERE MARCA_id = @Id"), _defineProperty(_querys, "getAllEquipos", "SELECT * FROM EQUIPO ORDER BY EQUIP_modelo"), _defineProperty(_querys, "getEquipoById", "SELECT * FROM EQUIPO Where EQUIP_id = @Id"), _defineProperty(_querys, "addNewEquipo", "INSERT INTO EQUIPO(EQUIP_modelo) VALUES(@EQUIP_modelo)"), _defineProperty(_querys, "updateEquipoById", "UPDATE EQUIPO SET EQUIP_modelo = @EQUIP_modelo WHERE EQUIP_id = @Id"), _querys);
 exports.querys = querys;

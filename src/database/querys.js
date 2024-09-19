@@ -15,8 +15,7 @@ export const querys = {
     getAllTipoInventario: "SELECT TI_id, TI_descripcion FROM TIPO_INVENTARIO",
 
    //Querys Tabla Modelos de Equipos
-  getAllEquipos: "SELECT * FROM EQUIPO ORDER BY EQUIP_modelo", 
-  getEquipoById: "SELECT * FROM EQUIPO Where EQ_id = @Id",
+  
   //Querys Tabla Modelos de Usuarios
   getAllUsuarios: "SELECT * FROM USUARIOS", 
   getUsuarioById: "SELECT * FROM USUARIOS Where USU_id = @Id",
@@ -61,10 +60,7 @@ export const querys = {
     updateUserById:
     "UPDATE USUARIOS SET USU_nombre = @USU_nombre,USU_usuario = @USU_usuario,USU_clave = @USU_clave,USU_cargo = @USU_cargo,USU_rol = @USU_rol WHERE USU_id = @Id",
 
-    //Marcas
-    getAllMarcas:"SELECT MARCA_id,MARCA_descripcion FROM MARCA",
-    addNewMarca:
-    "INSERT INTO MARCA(MARCA_id,MARCA_descripcion) VALUES(@MARCA_id,@MARCA_descripcion)",
+    
 
     //getAllCiudad:"SELECT DISTINCT(EQC_MAP_ciudad) AS FROM EQUIPO_COMPLETO ORDER BY EQC_MAP_ciudad",
     getAllCiudad:"SELECT DISTINCT(EQC_provincia) AS EQC_MAP_ciudad FROM EQUIPO_COMPLETO ORDER BY EQC_provincia",
@@ -77,16 +73,13 @@ export const querys = {
     //09/09/2024
     getAllCanal:"SELECT CANAL_id, CANAL_descripcion FROM CANAL",
     getCanalById: "SELECT CANAL_id, CANAL_descripcion FROM CANAL WHERE CANAL_id = @id",
-    getAllVendedor:"SELECT VEND_id, VEND_nombres FROM VENDEDOR ORDER BY VEND_nombres",
-    getVendedorById: "SELECT VEND_id, VEND_nombres FROM VENDEDOR WHERE VEND_id = @id",
+    
     getAllSubEstado:"SELECT SUBEST_id, SUBEST_descripcion FROM SUBESTADO",
     getSubEstadoById: "SELECT SUBEST_id, SUBEST_descripcion FROM SUBESTADO WHERE SUBEST_id = @id",
     getAllSubCanal:"SELECT SUBCAN_id, SUBCAN_descripcion FROM SUBCANAL ORDER BY SUBCAN_descripcion",
     getSubCanalById: "SELECT SUBCAN_id, SUBCAN_descripcion FROM SUBCANAL WHERE SUBCAN_id = @id",
     getAllSegmento:"SELECT SEG_id, SEG_descripcion FROM SEGMENTO",
     getSegmentoById: "SELECT SEG_id, SEG_descripcion FROM SEGMENTO WHERE SEG_id = @id",
-    getAllSupervisor:"SELECT SUP_id, SUP_descripcion FROM SUPERVISOR ORDER BY SUP_descripcion",
-    getSupervisorById: "SELECT SUP_id, SUP_descripcion FROM SUPERVISOR WHERE SUP_id = @id",
     getAllSubSegmentacion:"SELECT SUBSEG_id, SUBSEG_descripcion FROM SUBSEGMENTACION ORDER BY SUBSEG_descripcion",
     getSubsegmentacionById: "SELECT SUBSEG_id, SUBSEG_descripcion FROM SUBSEGMENTACION WHERE SUBSEG_id = @id",
     getAllTipoEquipo:"SELECT TE_id, TE_descripcion FROM TIPO_EQUIPO",
@@ -100,4 +93,21 @@ export const querys = {
     getAllNumCuerpos: "SELECT NUM_CUE_id, NUM_CUE_descripcion FROM NUMERO_CUERPOS",
     getNumCuerposById: "SELECT NUM_CUE_id, NUM_CUE_descripcion FROM NUMERO_CUERPOS WHERE NUM_CUE_id = @id",
     getAllProvincia: "SELECT PROV_id, PROV_descripcion FROM PROVINCIA",
+
+    getAllVendedor:"SELECT VEND_id, VEND_nombres FROM VENDEDOR ORDER BY VEND_nombres",
+    getVendedorById: "SELECT VEND_id, VEND_nombres FROM VENDEDOR WHERE VEND_id = @id",
+    addNewVendedor: "INSERT INTO VENDEDOR(VEND_nombres,VEND_estado) VALUES(@VEND_nombres,1)",
+    updateVendedorById:"UPDATE VENDEDOR SET VEND_nombres = @VEND_nombres WHERE USU_id = @Id",
+    getAllSupervisor:"SELECT SUP_id, SUP_descripcion FROM SUPERVISOR ORDER BY SUP_descripcion",
+    getSupervisorById: "SELECT SUP_id, SUP_descripcion FROM SUPERVISOR WHERE SUP_id = @id",
+    addNewVendedor: "INSERT INTO VENDEDOR(VEND_nombres,VEND_estado) VALUES(@VEND_nombres,1)",
+    updateVendedorById:"UPDATE VENDEDOR SET VEND_nombres = @VEND_nombres WHERE VEND_id = @Id",
+    getAllMarcas:"SELECT MARCA_id,MARCA_descripcion FROM MARCA ORDER BY MARCA_descripcion",
+    getMarcaById: "SELECT  MARCA_id,MARCA_descripcion FROM MARCA WHERE MARCA_id = @id",
+    addNewMarca:"INSERT INTO MARCA(MARCA_descripcion) VALUES(@MARCA_descripcion)",
+    updateMarcaById:"UPDATE MARCA SET MARCA_descripcion = @MARCA_descripcion WHERE MARCA_id = @Id",
+    getAllEquipos: "SELECT * FROM EQUIPO ORDER BY EQUIP_modelo", 
+    getEquipoById: "SELECT * FROM EQUIPO Where EQUIP_id = @Id",
+    addNewEquipo:"INSERT INTO EQUIPO(EQUIP_modelo) VALUES(@EQUIP_modelo)",
+    updateEquipoById:"UPDATE EQUIPO SET EQUIP_modelo = @EQUIP_modelo WHERE EQUIP_id = @Id",
 };

@@ -1,9 +1,9 @@
 import { getConnection, querys, sql } from "../database";
 
-export const getMarcas = async (req, res) => {
+export const getVendedor = async (req, res) => {
   try {
     const pool = await getConnection();
-    const result = await pool.request().query(querys.getAllMarcas);
+    const result = await pool.request().query(querys.getAllVendedor);
     res.json(result.recordset);
   } catch (error) {
     res.status(500);
@@ -11,14 +11,14 @@ export const getMarcas = async (req, res) => {
   }
 };
 
-export const getMarcaById = async (req, res) => {
+export const getVendedorById = async (req, res) => {
   try {
     const pool = await getConnection();
 
     const result = await pool
       .request()
       .input("id", req.params.id)
-      .query(querys.getMarcaById);
+      .query(querys.getVendedorById);
     return res.json(result.recordset[0]);
   } catch (error) {
     res.status(500);
@@ -26,15 +26,15 @@ export const getMarcaById = async (req, res) => {
   }
 };
 
-export const createNewMarca = async (req, res) => {
+export const createNewVendedor = async (req, res) => {
 
   try {
     const pool = await getConnection();
     const result = await pool
       .request()
-      .input("MARCA_descripcion", sql.VarChar, req.body.Nombres)
+      .input("VEND_nombres", sql.VarChar, req.body.Nombres)
            
-      .query(querys.addNewMarca);
+      .query(querys.addNewVendedor);
       if(result.rowsAffected==1){
         return res.status(200).json({ status: "ok", msg: "Registro exitoso" ,token:0});
       }else{
@@ -48,7 +48,7 @@ export const createNewMarca = async (req, res) => {
   }
 };
 
-export const updateMarcaById = async (req, res) => {
+export const updateVendedorById = async (req, res) => {
   
   try {
     const pool = await getConnection();
@@ -56,8 +56,8 @@ export const updateMarcaById = async (req, res) => {
     const result = await pool
       .request()
       .input("id", req.params.id)
-      .input("MARCA_descripcion", sql.VarChar, req.body.Nombres)
-      .query(querys.updateMarcaById);
+      .input("VEND_nombres", sql.VarChar, req.body.Nombres)
+      .query(querys.updateVendedorById);
 
    if(result.rowsAffected==1){
     return res.status(200).json({ status: "ok", msg: "Actualizacion exitosa" ,token:0});

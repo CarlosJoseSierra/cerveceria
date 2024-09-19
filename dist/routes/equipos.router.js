@@ -9,5 +9,7 @@ var _equipos = require("../controllers/equipos.controller");
 var router = (0, _express.Router)();
 router.get("/equipos", _equipos.getEquipos);
 router.get("/equipos/:id", _equipos.getEquipoById);
+router.post("/equipos/new", _equipos.createNewEquipo);
+router.put("/equipos/x/:id", _equipos.updateEquipoById);
 var _default = router;
 exports["default"] = _default;
