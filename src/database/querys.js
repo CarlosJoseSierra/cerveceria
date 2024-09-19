@@ -101,8 +101,8 @@ export const querys = {
 
     getAllSupervisor:"SELECT SUP_id, SUP_descripcion FROM SUPERVISOR ORDER BY SUP_descripcion",
     getSupervisorById: "SELECT SUP_id, SUP_descripcion FROM SUPERVISOR WHERE SUP_id = @id",
-    addNewVendedor: "INSERT INTO SUPERVISOR(SUP_descripcion) VALUES(@SUP_descripcion)",
-    updateVendedorById:"UPDATE SUPERVISOR SET SUP_descripcion = @SUP_descripcion WHERE SUP_id = @Id",
+    addNewSupervisor: "INSERT INTO SUPERVISOR(SUP_descripcion) VALUES(@SUP_descripcion)",
+    updateSupervisorById:"UPDATE SUPERVISOR SET SUP_descripcion = @SUP_descripcion WHERE SUP_id = @Id",
     
     getAllMarcas:"SELECT MARCA_id,MARCA_descripcion FROM MARCA WHERE MARCA_estado = 1 ORDER BY MARCA_descripcion ",
     getMarcaById: "SELECT  MARCA_id,MARCA_descripcion FROM MARCA WHERE MARCA_id = @id",
