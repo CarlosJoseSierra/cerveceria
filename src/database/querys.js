@@ -98,14 +98,17 @@ export const querys = {
     getVendedorById: "SELECT VEND_id, VEND_nombres FROM VENDEDOR WHERE VEND_id = @id",
     addNewVendedor: "INSERT INTO VENDEDOR(VEND_nombres,VEND_estado) VALUES(@VEND_nombres,1)",
     updateVendedorById:"UPDATE VENDEDOR SET VEND_nombres = @VEND_nombres WHERE USU_id = @Id",
+
     getAllSupervisor:"SELECT SUP_id, SUP_descripcion FROM SUPERVISOR ORDER BY SUP_descripcion",
     getSupervisorById: "SELECT SUP_id, SUP_descripcion FROM SUPERVISOR WHERE SUP_id = @id",
-    addNewVendedor: "INSERT INTO VENDEDOR(VEND_nombres,VEND_estado) VALUES(@VEND_nombres,1)",
-    updateVendedorById:"UPDATE VENDEDOR SET VEND_nombres = @VEND_nombres WHERE VEND_id = @Id",
-    getAllMarcas:"SELECT MARCA_id,MARCA_descripcion FROM MARCA ORDER BY MARCA_descripcion",
+    addNewVendedor: "INSERT INTO SUPERVISOR(SUP_descripcion) VALUES(@SUP_descripcion)",
+    updateVendedorById:"UPDATE SUPERVISOR SET SUP_descripcion = @SUP_descripcion WHERE SUP_id = @Id",
+    
+    getAllMarcas:"SELECT MARCA_id,MARCA_descripcion FROM MARCA WHERE MARCA_estado = 1 ORDER BY MARCA_descripcion ",
     getMarcaById: "SELECT  MARCA_id,MARCA_descripcion FROM MARCA WHERE MARCA_id = @id",
-    addNewMarca:"INSERT INTO MARCA(MARCA_descripcion) VALUES(@MARCA_descripcion)",
+    addNewMarca:"INSERT INTO MARCA(MARCA_descripcion, MARCA_estado) VALUES(@MARCA_descripcion,1)",
     updateMarcaById:"UPDATE MARCA SET MARCA_descripcion = @MARCA_descripcion WHERE MARCA_id = @Id",
+    
     getAllEquipos: "SELECT * FROM EQUIPO ORDER BY EQUIP_modelo", 
     getEquipoById: "SELECT * FROM EQUIPO Where EQUIP_id = @Id",
     addNewEquipo:"INSERT INTO EQUIPO(EQUIP_modelo) VALUES(@EQUIP_modelo)",
