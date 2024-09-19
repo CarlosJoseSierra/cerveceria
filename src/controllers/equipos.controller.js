@@ -27,7 +27,7 @@ export const getEquipoById = async (req, res) => {
   }
 };
 
-export const createNewUser = async (req, res) => { 
+export const createNewEquipo = async (req, res) => { 
 
   try {
     const pool = await getConnection();
