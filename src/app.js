@@ -46,7 +46,7 @@ app.use("/api", infoRoutes);
 app.use("/api", ubicacionRoutes);
 app.use("/api", vendedorRoutes);
 app.use("/api", supervisorRoutes);
-app.use("/api", );
+
 app.use((req,res,next)=>{
     res.status(404).json({
         message: 'endpoint not found2'

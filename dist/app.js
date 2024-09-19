@@ -55,7 +55,6 @@ app.use("/api", _infoRouter["default"]);
 app.use("/api", _ubicacionRouter["default"]);
 app.use("/api", _vendedorRouter["default"]);
 app.use("/api", _supervisorRouter["default"]);
-app.use("/api");
 app.use(function (req, res, next) {
   res.status(404).json({
     message: 'endpoint not found2'
