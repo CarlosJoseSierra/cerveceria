@@ -130,7 +130,8 @@ export const updateActivoById = async (req, res) => {
 
    if(result.rowsAffected==1){
     if(req.body.EQC_cambio==1){
-      const result2 = await pool
+      const pool2 = await getConnection();
+      const result2 = await pool2
       .request()
       .input("HIST_EQC_id", sql.Decimal, req.params.id)
       .input("HIST_placa", sql.VarChar, req.body.ActivoFijo)
