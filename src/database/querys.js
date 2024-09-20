@@ -113,4 +113,6 @@ export const querys = {
     getEquipoById: "SELECT * FROM EQUIPO Where EQUIP_id = @Id",
     addNewEquipo:"INSERT INTO EQUIPO(EQUIP_modelo) VALUES(@EQUIP_modelo)",
     updateEquipoById:"UPDATE EQUIPO SET EQUIP_modelo = @EQUIP_modelo WHERE EQUIP_id = @Id",
+
+    addHistorialEquipo:"INSERT INTO HISTORIAL_MOVIMIENTOEQUIPO (HIST_EQC_id,HIST_placa,HIST_serie,HIST_codTag,HIST_FECHA_ing,HIST_USU_ing,HIST_MAP_ciudad,HIST_MAP_provincia,HIST_MAP_address,HIST_nombreCliente,HIST_identificacionCliente,HIST_direccionCliente,HIST_NegocioCliente,HIST_telefonoCliente,HIST_observacion,HIST_estadoEquipo,HIST_TI_id,HIST_provincia,HIST_UBIC_id) VALUES (@HIST_EQC_id,@HIST_serie,@HIST_codTag,GETDATE(),@HIST_USU_ing,@HIST_MAP_ciudad,@HIST_MAP_provincia,@HIST_MAP_address,@HIST_nombreCliente,@HIST_identificacionCliente,@HIST_direccionCliente,@HIST_NegocioCliente,@HIST_telefonoCliente,@HIST_observacion,@HIST_estadoEquipo,@HIST_TI_id,@HIST_provincia,@HIST_UBIC_id)",
 };

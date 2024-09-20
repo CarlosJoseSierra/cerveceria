@@ -129,7 +129,7 @@ var createNewActivo = /*#__PURE__*/function () {
 exports.createNewActivo = createNewActivo;
 var updateActivoById = /*#__PURE__*/function () {
   var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee4(req, res) {
-    var pool, result;
+    var pool, result, result2;
     return _regeneratorRuntime().wrap(function _callee4$(_context4) {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
@@ -143,7 +143,19 @@ var updateActivoById = /*#__PURE__*/function () {
         case 6:
           result = _context4.sent;
           if (!(result.rowsAffected == 1)) {
-            _context4.next = 11;
+            _context4.next = 19;
+            break;
+          }
+          if (!(req.body.EQC_cambio == 1)) {
+            _context4.next = 16;
+            break;
+          }
+          _context4.next = 11;
+          return pool.request().input("HIST_EQC_id", _database.sql.Decimal, req.params.id).input("HIST_placa", _database.sql.VarChar, req.body.ActivoFijo).input("HIST_serie", _database.sql.Decimal, req.body.NumEquipo).input("HIST_codTag", _database.sql.Decimal, req.body.CodTag).input("HIST_USU_ing", _database.sql.Decimal, req.body.USU_ing).input("HIST_MAP_ciudad", _database.sql.VarChar, req.body.ciudad).input("HIST_MAP_provincia", _database.sql.VarChar, req.body.provincia).input("HIST_MAP_address", _database.sql.VarChar, req.body.address).input("HIST_nombreCliente", _database.sql.VarChar, req.body.Nombre_Cliente).input("HIST_identificacionCliente", _database.sql.VarChar, req.body.RUC).input("HIST_direccionCliente", _database.sql.VarChar, req.body.Direccion_Cliente).input("HIST_NegocioCliente", _database.sql.VarChar, req.body.Local).input("HIST_telefonoCliente", _database.sql.VarChar, req.body.Telefono).input("HIST_observacion", _database.sql.VarChar, req.body.Observacion).input("HIST_estadoEquipo", _database.sql.Decimal, req.body.Estado).input("HIST_TI_id", _database.sql.Decimal, req.body.SubEstado).input("HIST_provincia", _database.sql.VarChar, req.body.ubicacion).input("HIST_UBIC_id", _database.sql.Decimal, req.body.Ciudad).query(_database.querys.addHistorialEquipo);
+        case 11:
+          result2 = _context4.sent;
+          if (!(result.rowsAffected == 1)) {
+            _context4.next = 14;
             break;
           }
           return _context4.abrupt("return", res.status(200).json({
@@ -151,25 +163,37 @@ var updateActivoById = /*#__PURE__*/function () {
             msg: "Actualizacion exitosa",
             token: 0
           }));
-        case 11:
+        case 14:
+          _context4.next = 17;
+          break;
+        case 16:
+          return _context4.abrupt("return", res.status(200).json({
+            status: "ok",
+            msg: "Actualizacion exitosa",
+            token: 0
+          }));
+        case 17:
+          _context4.next = 20;
+          break;
+        case 19:
           return _context4.abrupt("return", res.status(400).json({
             status: "400",
             msg: "No se pudo actualizar, consulte al administrador",
             token: 0
           }));
-        case 12:
-          _context4.next = 18;
+        case 20:
+          _context4.next = 26;
           break;
-        case 14:
-          _context4.prev = 14;
+        case 22:
+          _context4.prev = 22;
           _context4.t0 = _context4["catch"](0);
           res.status(500);
           res.send(_context4.t0.message);
-        case 18:
+        case 26:
         case "end":
           return _context4.stop();
       }
-    }, _callee4, null, [[0, 14]]);
+    }, _callee4, null, [[0, 22]]);
   }));
   return function updateActivoById(_x7, _x8) {
     return _ref4.apply(this, arguments);

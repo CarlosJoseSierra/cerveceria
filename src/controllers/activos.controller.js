@@ -129,7 +129,35 @@ export const updateActivoById = async (req, res) => {
       .query(querys.updateActivoById);
 
    if(result.rowsAffected==1){
-    return res.status(200).json({ status: "ok", msg: "Actualizacion exitosa" ,token:0});
+    if(req.body.EQC_cambio==1){
+      const result2 = await pool
+      .request()
+      .input("HIST_EQC_id", sql.Decimal, req.params.id)
+      .input("HIST_placa", sql.VarChar, req.body.ActivoFijo)
+      .input("HIST_serie", sql.Decimal, req.body.NumEquipo)
+      .input("HIST_codTag", sql.Decimal, req.body.CodTag)
+      .input("HIST_USU_ing", sql.Decimal, req.body.USU_ing)
+      .input("HIST_MAP_ciudad", sql.VarChar, req.body.ciudad)
+      .input("HIST_MAP_provincia", sql.VarChar, req.body.provincia)
+      .input("HIST_MAP_address", sql.VarChar, req.body.address)
+      .input("HIST_nombreCliente", sql.VarChar, req.body.Nombre_Cliente)
+      .input("HIST_identificacionCliente", sql.VarChar, req.body.RUC)
+      .input("HIST_direccionCliente", sql.VarChar, req.body.Direccion_Cliente)
+      .input("HIST_NegocioCliente", sql.VarChar, req.body.Local)
+      .input("HIST_telefonoCliente", sql.VarChar, req.body.Telefono)
+      .input("HIST_observacion", sql.VarChar, req.body.Observacion)
+      .input("HIST_estadoEquipo", sql.Decimal, req.body.Estado)
+      .input("HIST_TI_id",sql.Decimal,req.body.SubEstado)
+      .input("HIST_provincia",sql.VarChar,req.body.ubicacion)
+      .input("HIST_UBIC_id",sql.Decimal,req.body.Ciudad)
+      .query(querys.addHistorialEquipo);
+      if(result.rowsAffected==1){
+        return res.status(200).json({ status: "ok", msg: "Actualizacion exitosa" ,token:0});
+      }
+    }
+    else{
+      return res.status(200).json({ status: "ok", msg: "Actualizacion exitosa" ,token:0});
+    }
   }else{
     return res.status(400).json({ status: "400", msg: "No se pudo actualizar, consulte al administrador" ,token:0});
   }
