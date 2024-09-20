@@ -154,7 +154,7 @@ var updateActivoById = /*#__PURE__*/function () {
           return pool.request().input("HIST_EQC_id", _database.sql.Decimal, req.params.id).input("HIST_placa", _database.sql.VarChar, req.body.ActivoFijo).input("HIST_serie", _database.sql.Decimal, req.body.NumEquipo).input("HIST_codTag", _database.sql.Decimal, req.body.CodTag).input("HIST_USU_ing", _database.sql.Decimal, req.body.USU_ing).input("HIST_MAP_ciudad", _database.sql.VarChar, req.body.ciudad).input("HIST_MAP_provincia", _database.sql.VarChar, req.body.provincia).input("HIST_MAP_address", _database.sql.VarChar, req.body.address).input("HIST_nombreCliente", _database.sql.VarChar, req.body.Nombre_Cliente).input("HIST_identificacionCliente", _database.sql.VarChar, req.body.RUC).input("HIST_direccionCliente", _database.sql.VarChar, req.body.Direccion_Cliente).input("HIST_NegocioCliente", _database.sql.VarChar, req.body.Local).input("HIST_telefonoCliente", _database.sql.VarChar, req.body.Telefono).input("HIST_observacion", _database.sql.VarChar, req.body.Observacion).input("HIST_estadoEquipo", _database.sql.Decimal, req.body.Estado).input("HIST_TI_id", _database.sql.Decimal, req.body.SubEstado).input("HIST_provincia", _database.sql.VarChar, req.body.ubicacion).input("HIST_UBIC_id", _database.sql.Decimal, req.body.Ciudad).query(_database.querys.addHistorialEquipo);
         case 11:
           result2 = _context4.sent;
-          if (!(result.rowsAffected == 1)) {
+          if (!(result2.rowsAffected == 1)) {
             _context4.next = 14;
             break;
           }

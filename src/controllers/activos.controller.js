@@ -151,7 +151,7 @@ export const updateActivoById = async (req, res) => {
       .input("HIST_provincia",sql.VarChar,req.body.ubicacion)
       .input("HIST_UBIC_id",sql.Decimal,req.body.Ciudad)
       .query(querys.addHistorialEquipo);
-      if(result.rowsAffected==1){
+      if(result2.rowsAffected==1){
         return res.status(200).json({ status: "ok", msg: "Actualizacion exitosa" ,token:0});
       }
     }
